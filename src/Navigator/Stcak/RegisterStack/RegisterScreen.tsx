@@ -8,8 +8,8 @@ const Stack = createNativeStackNavigator();
 const RegisterScreen = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }} >
-            <Stack.Screen name="Personalinformation" component={Personalinformation} />
-            <Stack.Screen name="Driverinformation" component={Driverinformation} />
+            {/* <Stack.Screen name="Personalinformation" component={Personalinformation} />
+            <Stack.Screen name="Driverinformation" component={Driverinformation} /> */}
             <Stack.Screen name="Driverslicense" component={Driverslicense} />
         </Stack.Navigator>
     )
