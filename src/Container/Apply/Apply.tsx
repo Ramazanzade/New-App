@@ -33,7 +33,7 @@ const Apply = ({navigation}:any) => {
             </View>
             <View style={{display:'flex', flexDirection:'row', alignSelf:'center', marginBottom:'10%'}}>
                 <Text style={{color:'rgba(82, 82, 86, 1)'}}>Profiliniz var?</Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate('LoginScreen')}>
                     <Text style={{color:'rgba(16, 17, 20, 1)', fontWeight:'600', paddingLeft:5}}>Daxil olun</Text>
                 </TouchableOpacity>
             </View>
