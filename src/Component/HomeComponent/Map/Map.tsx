@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import { View, Text, TouchableOpacity, PermissionsAndroid } from 'react-native'
+import React, { useEffect, useState } from 'react'
 import MapView, { Marker } from 'react-native-maps';
-import { SCREEN_WIDTH } from '../../../Utils/common';
+import Geolocation from '@react-native-community/geolocation';
 import Loction from '../../../assets/imge/Home-imge/Path.svg'
 const Map = () => {
     const initialRegion = {
@@ -28,6 +28,36 @@ const Map = () => {
             longitudeDelta: prevRegion.longitudeDelta * 2,
         }));
     };
+
+    const getCurrentLocation = async () => {
+        const granted = await PermissionsAndroid.request(
+            PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+            {
+                title: "Location Permission",
+                message: "This app needs access to your location.",
+                buttonNeutral: "Ask Me Later",
+                buttonNegative: "Cancel",
+                buttonPositive: "OK"
+            }
+        );
+    
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+            Geolocation.getCurrentPosition(
+                (position:any) => {
+                    const { latitude, longitude } = position.coords;
+                    setRegion({
+                        ...region,
+                        latitude,
+                        longitude,
+                    });
+                },
+                (error:any) => console.log(error),
+                { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+            );
+        } else {
+            console.log("Location permission denied");
+        }
+    };
     return (
         <View style={{ flex: 1 }}>
             <MapView
@@ -49,10 +79,12 @@ const Map = () => {
                     <Text style={{ fontSize: 35, color: 'rgba(82, 82, 86, 1)', textAlign: 'center' }} > - </Text>
                 </TouchableOpacity>
             </View>
-            <View style={{ backgroundColor: 'rgba(70, 71, 74, 1)', position: "absolute", top: '50%', right: "5%", borderRadius: 50, alignSelf: 'flex-end',  justifyContent: 'center', // Center content vertically
-    alignItems: 'center', }}>
-                <View style={{alignItems:'center',}}>
-                    <TouchableOpacity onPress={zoomIn} style={{ alignSelf: 'center', padding: '1.5%' }}>
+            <View style={{
+                backgroundColor: 'rgba(70, 71, 74, 1)', position: "absolute", top: '50%', right: "5%", borderRadius: 50, alignSelf: 'flex-end', justifyContent: 'center', // Center content vertically
+                alignItems: 'center',
+            }}>
+                <View style={{ alignItems: 'center', }}>
+                    <TouchableOpacity style={{ alignSelf: 'center', padding: '1.5%' }} onPress={getCurrentLocation}>
                         <Loction width={35} height={35} />
                     </TouchableOpacity>
                 </View>

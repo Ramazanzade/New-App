@@ -13,11 +13,8 @@ const Home = () => {
             <View style={{flex:1}}>
                 <Map />
             </View>
-            <View style={{ position: 'absolute', width: SCREEN_WIDTH - 30, alignSelf: 'center', }}>
+            <View style={{position:'absolute'}}>
                 <Home_Headr />
-            </View>
-            <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
-                <Offline_index />
             </View>
         </View >
     );
