@@ -1,24 +1,25 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import MapView from 'react-native-maps';
+import React, { useState } from 'react';
+import { View, Button } from 'react-native';
 import Offline_index from '../../Component/HomeComponent/Offline/Offline_index';
+import Home_Headr from '../../Component/HomeComponent/Home_Headr/Home_Headr';
+import { SCREEN_WIDTH } from '../../Utils/common';
+import Map from '../../Component/HomeComponent/Map/Map';
 
 const Home = () => {
+
+
     return (
         <View style={{ flex: 1 }}>
-            <MapView
-                style={{ flex: 1 }}
-                initialRegion={{
-                    latitude: 37.78825,
-                    longitude: -122.4324,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
-                }}
-            />
-            <View>
+            <View style={{flex:1}}>
+                <Map />
+            </View>
+            <View style={{ position: 'absolute', width: SCREEN_WIDTH - 30, alignSelf: 'center', }}>
+                <Home_Headr />
+            </View>
+            <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
                 <Offline_index />
             </View>
-        </View>
+        </View >
     );
 };
 
