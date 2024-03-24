@@ -52,7 +52,7 @@ const Home_Headr = () => {
                 </TouchableOpacity> */}
                 </View>
             </View>
-            <View style={{ width: SCREEN_WIDTH,marginTop:SCREEN_HEIGHT/1.5 }}>
+            <View style={{ width: SCREEN_WIDTH }}>
                 {switchValue
                     ?
                     <View style={{}}>
