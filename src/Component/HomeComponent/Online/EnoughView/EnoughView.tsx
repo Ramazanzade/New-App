@@ -5,7 +5,13 @@ import Oclock from '../../../../assets/imge/Home-imge/icon.svg'
 import { SCREEN_WIDTH } from '../../../../Utils/common'
 import Callsvg from '../../../../assets/imge/Home-imge/Frame.svg'
 import Moresvg from '../../../../assets/imge/Home-imge/mor.svg'
+import Order_details from '../Order_details/Order_details'
 const EnoughView = () => {
+    const [viewdetail, setviewdetail] = useState(false)
+
+    const Handel = () => {
+        setviewdetail(!viewdetail)
+    }
     return (
         <View style={{ width: SCREEN_WIDTH - 40, alignSelf: 'center' }}>
             <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#ECF1FF', borderRadius: 10, padding: '2%', paddingHorizontal: '5%', }}>
@@ -16,7 +22,7 @@ const EnoughView = () => {
                     <Text style={{ color: 'rgba(16, 17, 20, 1)', fontWeight: '500', textAlign: 'center', fontSize: 20 }}>16.00 Azn</Text>
                 </View>
             </View>
-            <View style={{ borderWidth: 0.5, borderColor: '#727782', borderRadius: 10, padding: '5%', marginVertical: '5%' }}>
+            <View style={{ borderWidth: 0.5, borderColor: '#727782', borderRadius: 10, padding: '5%', marginTop: '5%' }}>
                 <View style={{ display: 'flex', flexDirection: 'row' }}>
                     <View style={{ flexDirection: 'column', alignItems: 'center', display: "flex" }}>
                         <View style={{ width: 20, height: 20, backgroundColor: 'rgba(31, 94, 170, 1)', borderRadius: 50 }}></View>
@@ -123,14 +129,31 @@ const EnoughView = () => {
                         </View>
                     </View>
                 </View>
-                <View style={{marginTop:'5%'}}>
-                    <TouchableOpacity style={{display:'flex', flexDirection:'row'}}>
-                        <Text style={{color:'rgba(64, 62, 62, 1)', fontSize:10}}>
+                <View style={{ marginTop: '5%' }}>
+                    <TouchableOpacity style={{ display: 'flex', flexDirection: 'row' }} onPress={Handel}>
+                        <Text style={{ color: 'rgba(64, 62, 62, 1)', fontSize: 10 }}>
                             Daha çox bax
                         </Text>
-                        <Moresvg width={20} height={20}/>
+                        <Moresvg width={20} height={20} />
                     </TouchableOpacity>
+
                 </View>
+            </View>
+
+            <View style={{ marginTop: '0%' }}>
+                {
+                    viewdetail
+                        ?
+                        (
+                            <View style={{}}>
+                                <Order_details />
+                            </View>
+                        )
+                        :
+                        (
+                            null
+                        )
+                }
             </View>
         </View>
     )

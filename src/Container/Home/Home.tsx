@@ -13,7 +13,7 @@ const Home = () => {
             <View style={{flex:1}}>
                 <Map />
             </View>
-            <View style={{position:'absolute'}}>
+            <View style={{position:'absolute', height:'100%'}}>
                 <Home_Headr />
             </View>
         </View >

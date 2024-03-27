@@ -14,7 +14,7 @@ const Home_Headr = () => {
         setSwitchValue(value);
     };
     return (
-        <View style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+        <View style={{ display: 'flex', flexDirection: 'column', flex: 1,justifyContent:'space-between'}}>
             <View style={{ display: 'flex', flexDirection: 'row', marginTop: '10%', justifyContent: 'space-between' }}>
                 <View style={{ alignSelf: 'center' }}>
                     <TouchableOpacity style={{ width: 53, height: 53, backgroundColor: '#FDFBFF', borderRadius: 55, alignSelf: 'center', alignItems: "center", paddingTop: '19%' }}>
@@ -52,7 +52,7 @@ const Home_Headr = () => {
                 </TouchableOpacity> */}
                 </View>
             </View>
-            <View style={{ width: SCREEN_WIDTH }}>
+            <View style={{ width: SCREEN_WIDTH, justifyContent:'flex-end'}}>
                 {switchValue
                     ?
                     <View style={{}}>
