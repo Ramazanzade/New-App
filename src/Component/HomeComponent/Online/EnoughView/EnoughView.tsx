@@ -8,7 +8,6 @@ import Moresvg from '../../../../assets/imge/Home-imge/mor.svg'
 import Order_details from '../Order_details/Order_details'
 const EnoughView = () => {
     const [viewdetail, setviewdetail] = useState(false)
-
     const Handel = () => {
         setviewdetail(!viewdetail)
     }
@@ -145,9 +144,7 @@ const EnoughView = () => {
                     viewdetail
                         ?
                         (
-                            <View style={{}}>
-                                <Order_details />
-                            </View>
+                            <Order_details />
                         )
                         :
                         (

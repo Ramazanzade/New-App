@@ -10,27 +10,31 @@ import RegisterScreen from './src/Navigator/Stcak/RegisterStack/RegisterScreen';
 import ApplyScreen from './src/Navigator/Stcak/ApplyStack/ApplyScreen'
 import WelcomeScreen from './src/Navigator/Stcak/WelcomeStack/WelcomeScreen'
 import Tabbar from './src/Navigator/Tabbar/Tabbar'
+import { ButtonProvider } from './src/Context/ButtonContext/ButtonContext';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-         {/* <Stack.Screen name="SplaScreen" component={SplasScreen} /> 
+    <ButtonProvider>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          {/* <Stack.Screen name="SplaScreen" component={SplasScreen} /> 
         <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
         <Stack.Screen name="AccountSetupScreen" component={AccountSetupScreen} />
         <Stack.Screen name="ApplyScreen" component={ApplyScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
-        <Stack.Screen name="Tabbar" component={Tabbar} />
-      </Stack.Navigator>
-    </NavigationContainer>
+          <Stack.Screen name="Tabbar" component={Tabbar} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ButtonProvider>
+
   );
 };
 const BigApp = () => {
   return (
     // <Provider store={store} >
-      <App />
+    <App />
     // </Provider>
   )
 }

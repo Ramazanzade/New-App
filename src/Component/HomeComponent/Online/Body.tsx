@@ -1,20 +1,20 @@
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { SCREEN_WIDTH } from '../../../Utils/common'
 import AcceptView from './AcceptView/AcceptView'
 import EnoughView from './EnoughView/EnoughView'
-
+import {ButtonContext} from '../../../Context/ButtonContext/ButtonContext'
 const Body = () => {
-    const [buttoncolor, setbuttoncolor] = useState(false)
+    const { button, setButton } = useContext(ButtonContext);
     const handle = () => {
-        setbuttoncolor(!buttoncolor)
+        setButton(!button)
     }
     return (
         <View style={{ width: SCREEN_WIDTH - 40, alignSelf: 'center' }}>
-            {buttoncolor
+            {button
                 ?
                 (
-                    <EnoughView />
+                    <EnoughView/>
                 )
                 :
                 (
@@ -22,8 +22,8 @@ const Body = () => {
                 )
             }
             <View style={{marginTop:'2%'}}>
-                <TouchableOpacity style={{ backgroundColor: buttoncolor ? 'rgba(114, 119, 130, 1)' : 'rgba(0, 80, 155, 1)', borderRadius: 10, marginBottom: '3%' }} onPress={handle}>
-                    {buttoncolor
+                <TouchableOpacity style={{ backgroundColor: button ? 'rgba(114, 119, 130, 1)' : 'rgba(0, 80, 155, 1)', borderRadius: 10, marginBottom: '3%' }} onPress={handle}>
+                    {button
                         ?
                         (
                             <Text style={{ color: 'rgba(255, 255, 255, 1)', fontSize: 15, textAlign: 'center', padding: '2%', }}>Çatdı</Text>

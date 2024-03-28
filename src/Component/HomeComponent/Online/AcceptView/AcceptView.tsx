@@ -15,11 +15,11 @@ const AcceptView = () => {
                     <Text style={{ color: 'rgba(16, 17, 20, 1)', fontWeight: '500', textAlign: 'center', fontSize: 20 }}>16.00 Azn</Text>
                 </View>
             </View>
-            <View style={{ borderWidth: 0.5, borderColor: '#727782', borderRadius: 10, padding: '5%', marginVertical: '5%' }}>
+            <View style={{ borderWidth: 0.5, borderColor: '#727782', borderRadius: 10, padding: '5%', marginVertical: '2%' }}>
                 <View style={{ display: 'flex', flexDirection: 'row' }}>
                     <View style={{ flexDirection: 'column', alignItems: 'center', display: "flex" }}>
                         <View style={{ width: 20, height: 20, backgroundColor: 'rgba(31, 94, 170, 1)', borderRadius: 50 }}></View>
-                        <View style={{ width: 5, height: 170, backgroundColor: 'rgba(31, 94, 170, 1)', borderRadius: 0 }}></View>
+                        <View style={{ width: 5, height: 130, backgroundColor: 'rgba(31, 94, 170, 1)', borderRadius: 0 }}></View>
                         <View style={{ width: 20, height: 20, backgroundColor: 'rgba(31, 94, 170, 1)', borderRadius: 50 }}></View>
                     </View>
 
@@ -28,38 +28,38 @@ const AcceptView = () => {
                     {/*  Flatlist ilə yazılacaq */}
                     <View style={{ marginLeft: '3%' }}>
                         <View>
-                            <Text style={{ color: "rgba(144, 144, 148, 1)", }}>Qəbul nöqtəsi</Text>
-                            <Text style={{ color: "rgba(16, 17, 20, 1)", marginTop: '2%', fontSize: 15 }}>Şamaxı, yuxarı şilyan</Text>
+                            <Text style={{ color: "rgba(144, 144, 148, 1)",fontSize:10 }}>Qəbul nöqtəsi</Text>
+                            <Text style={{ color: "rgba(16, 17, 20, 1)", marginTop: '2%', fontSize: 11 }}>Şamaxı, yuxarı şilyan</Text>
                             <View style={{ display: 'flex', flexDirection: 'row', marginTop: '2%' }}>
                                 <View style={{ display: 'flex', flexDirection: 'row' }}>
-                                    <KM width={25} height={25} />
-                                    <Text style={{ color: 'rgba(144, 144, 148, 1)' }}>62 km</Text>
+                                    <KM width={20} height={20} />
+                                    <Text style={{ color: 'rgba(144, 144, 148, 1)', fontSize:11 }}>62 km</Text>
                                 </View>
                                 <View style={{ display: 'flex', flexDirection: 'row', marginLeft: '5%' }}>
-                                    <Oclock width={25} height={25} />
-                                    <Text style={{ color: 'rgba(144, 144, 148, 1)' }}>2 saat</Text>
+                                    <Oclock width={20} height={20} />
+                                    <Text style={{ color: 'rgba(144, 144, 148, 1)', fontSize:11 }}>2 saat</Text>
                                 </View>
                             </View>
                         </View>
                         <View style={{ marginTop: '10%' }}>
-                            <Text style={{ color: "rgba(144, 144, 148, 1)", }}>Çatdırılma nöqtəsi</Text>
+                            <Text style={{ color: "rgba(144, 144, 148, 1)", fontSize:10}}>Çatdırılma nöqtəsi</Text>
                             <View style={{ display: 'flex', flexDirection: 'row' }}>
                                 <View>
-                                    <Text style={{ color: "rgba(16, 17, 20, 1)", marginTop: '2%', fontSize: 15 }}>Manti restaurant</Text>
+                                    <Text style={{ color: "rgba(16, 17, 20, 1)", marginTop: '2%', fontSize: 11 }}>Manti restaurant</Text>
                                     <View style={{ display: 'flex', flexDirection: 'row', marginTop: '2%' }}>
                                         <View style={{ display: 'flex', flexDirection: 'row' }}>
-                                            <KM width={25} height={25} />
-                                            <Text style={{ color: 'rgba(144, 144, 148, 1)' }}>62 km</Text>
+                                            <KM width={20} height={20} />
+                                            <Text style={{ color: 'rgba(144, 144, 148, 1)' , fontSize:11 }}>62 km</Text>
                                         </View>
                                         <View style={{ display: 'flex', flexDirection: 'row', marginLeft: '5%' }}>
-                                            <Oclock width={25} height={25} />
-                                            <Text style={{ color: 'rgba(144, 144, 148, 1)' }}>2 saat</Text>
+                                            <Oclock width={20} height={20} />
+                                            <Text style={{ color: 'rgba(144, 144, 148, 1)' , fontSize:11}}>2 saat</Text>
                                         </View>
                                     </View>
                                 </View>
-                                <View style={{ marginLeft: '10%', marginTop: '2%' }}>
-                                    <Text style={{ color: 'rgba(144, 144, 148, 1)' }}>Məhsul çəkisi</Text>
-                                    <Text style={{ color: 'rgba(16, 17, 20, 1)', fontSize: 23, textAlign: 'right' }}>45 kg</Text>
+                                <View style={{ marginLeft: '25%', marginTop: '2%' }}>
+                                    <Text style={{ color: 'rgba(144, 144, 148, 1)' , fontSize:11}}>Məhsul çəkisi</Text>
+                                    <Text style={{ color: 'rgba(16, 17, 20, 1)', fontSize: 15, textAlign: 'right' }}>45 kg</Text>
                                 </View>
                             </View>
                         </View>

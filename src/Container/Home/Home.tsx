@@ -5,7 +5,7 @@ import Home_Headr from '../../Component/HomeComponent/Home_Headr/Home_Headr';
 import { SCREEN_WIDTH } from '../../Utils/common';
 import Map from '../../Component/HomeComponent/Map/Map';
 
-const Home = () => {
+const Home = ({navigation}:any) => {
 
 
     return (
@@ -14,7 +14,7 @@ const Home = () => {
                 <Map />
             </View>
             <View style={{position:'absolute', height:'100%'}}>
-                <Home_Headr />
+                <Home_Headr navigation={navigation}/>
             </View>
         </View >
     );
