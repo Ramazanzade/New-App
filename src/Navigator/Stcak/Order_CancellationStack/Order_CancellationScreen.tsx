@@ -1,14 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from '../../../Container/Home/Home';
+import Order_Cancellation from '../../../Container/Order_Cancellation/Order_Cancellation';
 const Stack = createNativeStackNavigator();
-const HomeScreen = () => {
+const Order_CancellationScreen = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }} >
-            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Order_Cancellation" component={Order_Cancellation} />
         </Stack.Navigator>
-    )
+  )
 }
 
-export default HomeScreen
+export default Order_CancellationScreen

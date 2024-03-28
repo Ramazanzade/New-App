@@ -71,21 +71,19 @@ const Map = () => {
                     description="This is a marker"
                 />
             </MapView>
-            <View style={{ backgroundColor: '#FFF', position: "absolute", top: '30%', right: "5%", borderRadius: 50, alignSelf: 'flex-end', padding: '1%' }}>
+            <View style={{ backgroundColor: '#FFF', position: "absolute", top: '20%', right: "5%", borderRadius: 50, alignSelf: 'flex-end', padding: '1%' }}>
                 <TouchableOpacity onPress={zoomIn} style={{}}>
-                    <Text style={{ fontSize: 30, color: 'rgba(82, 82, 86, 1)', textAlign: 'center' }} > + </Text>
+                    <Text style={{ fontSize: 20, color: 'rgba(82, 82, 86, 1)', textAlign: 'center' }} > + </Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={zoomOut}>
-                    <Text style={{ fontSize: 35, color: 'rgba(82, 82, 86, 1)', textAlign: 'center' }} > - </Text>
+                    <Text style={{ fontSize: 25, color: 'rgba(82, 82, 86, 1)', textAlign: 'center' }} > - </Text>
                 </TouchableOpacity>
             </View>
             <View style={{
-                backgroundColor: 'rgba(70, 71, 74, 1)', position: "absolute", top: '50%', right: "5%", borderRadius: 50, alignSelf: 'flex-end', justifyContent: 'center', // Center content vertically
-                alignItems: 'center',
-            }}>
+                backgroundColor: 'rgba(70, 71, 74, 1)', position: "absolute", top: '32%', right: "5%", borderRadius: 50, alignSelf: 'flex-end', justifyContent: 'center', alignItems: 'center' }}>
                 <View style={{ alignItems: 'center', }}>
                     <TouchableOpacity style={{ alignSelf: 'center', padding: '1.5%' }} onPress={getCurrentLocation}>
-                        <Loction width={35} height={35} />
+                        <Loction width={25} height={25} />
                     </TouchableOpacity>
                 </View>
             </View>

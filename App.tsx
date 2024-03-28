@@ -10,6 +10,7 @@ import RegisterScreen from './src/Navigator/Stcak/RegisterStack/RegisterScreen';
 import ApplyScreen from './src/Navigator/Stcak/ApplyStack/ApplyScreen'
 import WelcomeScreen from './src/Navigator/Stcak/WelcomeStack/WelcomeScreen'
 import Tabbar from './src/Navigator/Tabbar/Tabbar'
+import Order_CancellationScreen from './src/Navigator/Stcak/Order_CancellationStack/Order_CancellationScreen'
 import { ButtonProvider } from './src/Context/ButtonContext/ButtonContext';
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
           <Stack.Screen name="Tabbar" component={Tabbar} />
+          <Stack.Screen name="Order_CancellationScreen" component={Order_CancellationScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </ButtonProvider>

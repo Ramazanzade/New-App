@@ -59,7 +59,7 @@ const Home_Headr = ({navigation}:any) => {
                         <View style={{ alignSelf: 'center' }}>
                             <View style={{ width: 45, height: 45, backgroundColor: '#FDFBFF', borderRadius: 55, alignSelf: 'center', alignItems: "center", paddingTop: '19%' }} >
                                 {button ? (
-                                    <TouchableOpacity onPress={() =>navigation.navigate('ApplyScreen')}>
+                                    <TouchableOpacity onPress={() =>navigation.navigate('Order_CancellationScreen')}>
                                         <N width={25} height={25} />
                                     </TouchableOpacity>
                                 ) : (
