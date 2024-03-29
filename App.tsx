@@ -18,15 +18,15 @@ const App = () => {
     <ButtonProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-          {/* <Stack.Screen name="SplaScreen" component={SplasScreen} /> 
-        <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
-        <Stack.Screen name="AccountSetupScreen" component={AccountSetupScreen} />
+          <Stack.Screen name="SplaScreen" component={SplasScreen} /> 
+        {/* <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} /> */}
+        {/* <Stack.Screen name="AccountSetupScreen" component={AccountSetupScreen} />
         <Stack.Screen name="ApplyScreen" component={ApplyScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
-          <Stack.Screen name="Tabbar" component={Tabbar} />
-          <Stack.Screen name="Order_CancellationScreen" component={Order_CancellationScreen} />
+          {/* <Stack.Screen name="Tabbar" component={Tabbar} />
+          <Stack.Screen name="Order_CancellationScreen" component={Order_CancellationScreen} /> */}
         </Stack.Navigator>
       </NavigationContainer>
     </ButtonProvider>
