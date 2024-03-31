@@ -38,7 +38,7 @@ const Permission_slip = () => {
                 <View style={{ marginTop: '10%' }}>
                     <Text style={{ color: 'rgba(16, 17, 20, 1)', fontWeight: '400', }}>İcazə vərəqəsi <Text style={{color:'rgba(16, 17, 20, 1)', fontWeight:'200'}}> (sürücü üçün)</Text></Text>
                     <TouchableOpacity style={{ borderWidth: 1, borderColor: "rgba(199, 198, 202, 1)", borderRadius: 10, marginTop: '5%', borderStyle: "dashed" }} onPress={() => Fileupload()}>
-                        <View style={{ alignSelf: 'center', backgroundColor: 'rgba(250, 249, 253, 1)', width: 70, height: 70, borderRadius: 50, alignItems: 'center', marginVertical: '8%' }}>
+                        <View style={{ alignSelf: 'center', backgroundColor: 'rgba(250, 249, 253, 1)', width: 70, height: 70, borderRadius: 50, alignItems: 'center', marginVertical: '4%' }}>
                             <View style={{ marginTop: '15%' }}>
                                 <Upload2 width={50} height={50} />
                             </View>
