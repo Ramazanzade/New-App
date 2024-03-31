@@ -22,7 +22,7 @@ const App = () => {
         {/* <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} /> */}
         <Stack.Screen name="AccountSetupScreen" component={AccountSetupScreen} />
         <Stack.Screen name="ApplyScreen" component={ApplyScreen} />
-        <Stack.Screen name="LoginScreen" component={LoginScreen} />
+        {/* <Stack.Screen name="LoginScreen" component={LoginScreen} /> */}
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
           {/* <Stack.Screen name="Tabbar" component={Tabbar} />

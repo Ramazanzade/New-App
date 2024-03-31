@@ -58,7 +58,7 @@ const Hour_Modal = ({closeModal}:any) => {
                 onChangeText={handleHoursChange}
                 keyboardType="numeric"
                 maxLength={2}
-                style={{ backgroundColor: 'rgba(241, 240, 244, 1)', textAlign: 'center', borderRadius: 20, fontSize: 30, color: 'rgba(16, 17, 20, 1)', padding: '5%', paddingHorizontal: '17%' }}
+                style={{ backgroundColor: 'rgba(241, 240, 244, 1)', textAlign: 'center', borderRadius: 20, fontSize: 30, color: 'rgba(16, 17, 20, 1)', width:140, height:90 }}
               />
               <Text style={{ color: 'rgba(37, 38, 41, 1)', marginTop: '5%' }}>Saat</Text>
             </View>
@@ -69,7 +69,7 @@ const Hour_Modal = ({closeModal}:any) => {
                 onChangeText={handleMinutesChange}
                 keyboardType="numeric"
                 maxLength={2}
-                style={{ backgroundColor: 'rgba(241, 240, 244, 1)', textAlign: 'center', borderRadius: 20, fontSize: 30, color: 'rgba(16, 17, 20, 1)', padding: '5%', paddingHorizontal: '17%' }}
+                style={{ backgroundColor: 'rgba(241, 240, 244, 1)', textAlign: 'center', borderRadius: 20, fontSize: 30, color: 'rgba(16, 17, 20, 1)', width:140, height:90}}
               />
               <Text style={{ color: 'rgba(37, 38, 41, 1)', marginTop: '5%' }}>Dəqiqə</Text>
             </View>
@@ -81,7 +81,7 @@ const Hour_Modal = ({closeModal}:any) => {
                 onChangeText={handleHoursChange1}
                 keyboardType="numeric"
                 maxLength={2}
-                style={{ backgroundColor: 'rgba(241, 240, 244, 1)', textAlign: 'center', borderRadius: 20, fontSize: 30, color: 'rgba(16, 17, 20, 1)', padding: '5%', paddingHorizontal: '17%' }}
+                style={{ backgroundColor: 'rgba(241, 240, 244, 1)', textAlign: 'center', borderRadius: 20, fontSize: 30, color: 'rgba(16, 17, 20, 1)', width:140, height:90}}
               />
               <Text style={{ color: 'rgba(37, 38, 41, 1)', marginTop: '5%' }}>Saat</Text>
             </View>
@@ -92,7 +92,7 @@ const Hour_Modal = ({closeModal}:any) => {
                 onChangeText={handleMinutesChange1}
                 keyboardType="numeric"
                 maxLength={2}
-                style={{ backgroundColor: 'rgba(241, 240, 244, 1)', textAlign: 'center', borderRadius: 20, fontSize: 30, color: 'rgba(16, 17, 20, 1)', padding: '5%', paddingHorizontal: '17%' }}
+                style={{ backgroundColor: 'rgba(241, 240, 244, 1)', textAlign: 'center', borderRadius: 20, fontSize: 30, color: 'rgba(16, 17, 20, 1)', width:140, height:90}}
               />
               <Text style={{ color: 'rgba(37, 38, 41, 1)', marginTop: '5%' }}>Dəqiqə</Text>
             </View>
