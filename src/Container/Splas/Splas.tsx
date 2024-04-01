@@ -78,8 +78,8 @@ const Splas = ({ navigation }: any) => {
             <LogoName height={300} width={300} />
           }
         </View>
-        <View style={{ position: 'absolute', flex: 1, zIndex: -1, alignSelf:'center',alignContent:'center', justifyContent:'center', alignItems:'center' }}>
-          <Animated.View style={[sizeStyle, {justifyContent:'center'}]} />
+        <View style={{ position: 'absolute', flex: 1, zIndex: -1, alignSelf:'center'}}>
+          <Animated.View style={[sizeStyle]} />
         </View>
         <View style={{ alignSelf: 'center' }}>
           <Imegecenter width={500} height={400} />
