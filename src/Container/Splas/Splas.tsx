@@ -32,7 +32,7 @@ const Splas = ({ navigation }: any) => {
       inputRange: [0, 1, 2],
       outputRange: [window.width / 2, window.width / 2, window.width / 2]
     }),
-    backgroundColor: 'green',
+    backgroundColor: 'blue',
   };
   useEffect(() => {
     setTimeout(() => {
@@ -57,7 +57,8 @@ const Splas = ({ navigation }: any) => {
         flex: 1
       }
     }>
-      <View style={{ alignSelf: 'center', flex: 1 }}>
+      <View style={{ alignSelf: 'center', flex: 1, }}>
+
         <View style={{ alignSelf: 'center' }}>
           {bacround === '#FFFFFF'
             ?
@@ -77,17 +78,14 @@ const Splas = ({ navigation }: any) => {
             <LogoName height={300} width={300} />
           }
         </View>
-        <View >
-          {/* <Animated.View style={[sizeStyle, { position: 'absolute', alignSelf: 'center', flex: 1, alignItems: 'center' }]} /> */}
-          <View style={{ alignSelf: 'center' }}>
-            <Imegecenter width={500} height={400} />
-          </View>
+        <View style={{ position: 'absolute', flex: 1, zIndex: -1, alignSelf:'center',alignContent:'center', justifyContent:'center', alignItems:'center' }}>
+          <Animated.View style={[sizeStyle, {justifyContent:'center'}]} />
+        </View>
+        <View style={{ alignSelf: 'center' }}>
+          <Imegecenter width={500} height={400} />
         </View>
       </View>
-      <View style={{position:'absolute', justifyContent:'center', alignSelf:'center', zIndex:-2}}>
-        <Animated.View style={[sizeStyle, { position: 'absolute', alignSelf: 'center', flex: 1, alignItems: 'center' }]} />
 
-      </View>
     </Animated.View>
   )
 }
