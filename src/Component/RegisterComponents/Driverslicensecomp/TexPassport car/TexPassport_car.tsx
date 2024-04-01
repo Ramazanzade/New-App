@@ -1,14 +1,18 @@
 import { View, Text, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Upload4 from '../../../../assets/imge/Register-imge/document-upload.svg'
 import DocumentPicker, { DocumentPickerResponse } from 'react-native-document-picker';
 import File4 from '../../../../assets/imge/Register-imge/document-text.svg'
 import Trash4 from '../../../../assets/imge/Register-imge/trash.svg'
 import { SCREEN_WIDTH } from '../../../../Utils/common';
+import * as Progress from 'react-native-progress';
+import Tick4 from '../../../../assets/imge/Register-imge/tick-circle.svg'
 const TexPassport_car = () => {
     const [fileNames, setFileNames] = useState<any>([]);
     const [size, setSize] = useState<any>([]);
     const [fileSelected, setFileSelected] = useState<boolean>(false); 
+    const [icon, setIcon] = useState(<Trash4 width={30} height={30} />);
+    const [progress, setProgress] = useState(0);
 
     const Fileupload = async () => {
         try {
@@ -17,11 +21,23 @@ const TexPassport_car = () => {
             });
             console.log(docs);
 
-            const names = docs.map(doc => doc.name);
+            const names = docs.map(doc => doc.name?.substring(0 , 10) + '....' );
             setFileNames(names);
-            const sizes = docs.map(doc => doc.size);
+            const sizes = docs.map(doc => Math.round(size/1024) +1);
             setSize(sizes);
             setFileSelected(true);
+
+            setProgress(0);
+            const intervalId = setInterval(() => {
+                setProgress((oldProgress) => {
+                    if (oldProgress === 1) {
+                        clearInterval(intervalId);
+                        return 1;
+                    }
+                    return Math.min(oldProgress + 0.2, 1);
+                });
+            }, 1000);
+
         } catch (err) {
             if (DocumentPicker.isCancel(err))
                 console.log("User cancelled the upload", err);
@@ -29,6 +45,15 @@ const TexPassport_car = () => {
                 console.log(err);
         }
     }
+    useEffect(() => {
+        if (progress === 1) {
+            setIcon(<Tick4 width={30} height={30} />);
+            const timeoutId = setTimeout(() => {
+                setIcon(<Trash4 width={30} height={30} />);
+            }, 2000);
+            return () => clearTimeout(timeoutId);
+        }
+    }, [progress])
     const Delet=()=>{
         setFileSelected(false)
     }
@@ -63,11 +88,29 @@ const TexPassport_car = () => {
                                 <TouchableOpacity>
                                     <Text style={{ color: 'rgba(64, 120, 197, 1)', marginTop: '5%', marginBottom: '2%' }}>Baxmaq üçün klikləyin</Text>
                                 </TouchableOpacity>
+                                <View >
+                                    {
+                                        progress === 1
+                                            ?
+                                            (
+                                                null
+                                            )
+                                            :
+                                            (
+                                    <View style={{ width: SCREEN_WIDTH / 1.6, }}>
+                                        <Text style={{ color: progress === 1 ? 'green' : 'blue', alignSelf: 'flex-end' }}>{`${Math.round(progress * 100)}%`}</Text>
+                                        <View style={{ marginTop: '-4%' }}>
+                                            <Progress.Bar progress={progress} width={200} color={progress === 1 ? 'green' : 'blue'} />
+                                        </View>
+                                    </View>
+                                     )
+                                    }
+                                </View>
                             </View>
                         </View>
                         <View style={{}}>
                             <TouchableOpacity onPress={()=>Delet()}>
-                                <Trash4 width={30} height={30} />
+                                {icon}
                             </TouchableOpacity>
                         </View>
                     </View>

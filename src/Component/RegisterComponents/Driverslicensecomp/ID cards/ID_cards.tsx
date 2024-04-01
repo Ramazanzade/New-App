@@ -21,9 +21,9 @@ const ID_cards = () => {
             });
             console.log(docs);
 
-            const names = docs.map(doc => doc.name);
+            const names = docs.map(doc => doc.name?.substring(0 , 10) + '....' );
             setFileNames(names);
-            const sizes = docs.map(doc => doc.size);
+            const sizes = docs.map(doc => Math.round(size/1024) +1);
             setSize(sizes);
             setFileSelected(true);
 
@@ -36,12 +36,8 @@ const ID_cards = () => {
                     }
                     return Math.min(oldProgress + 0.2, 1);
                 });
-            }, 4000);
-            if (progress == 1) {
-                setIcon(<Tick width={30} height={30} />);
-            } else if (progress != 1) {
-                setIcon(<Trash width={30} height={30} />);
-            }
+            }, 1000);
+
         } catch (err) {
             if (DocumentPicker.isCancel(err))
                 console.log("User cancelled the upload", err);
@@ -49,6 +45,15 @@ const ID_cards = () => {
                 console.log(err);
         }
     }
+    useEffect(() => {
+        if (progress === 1) {
+            setIcon(<Tick width={30} height={30} />);
+            const timeoutId = setTimeout(() => {
+                setIcon(<Trash width={30} height={30} />);
+            }, 2000);
+            return () => clearTimeout(timeoutId);
+        }
+    }, [progress])
     const Delet = () => {
         setFileSelected(false)
     }
@@ -84,22 +89,22 @@ const ID_cards = () => {
                                     <Text style={{ color: 'rgba(64, 120, 197, 1)', marginTop: '5%', marginBottom: '2%' }}>Baxmaq üçün klikləyin</Text>
                                 </TouchableOpacity>
                                 <View >
-                                    {/* {
+                                    {
                                         progress === 1
                                             ?
                                             (
                                                 null
                                             )
                                             :
-                                            ( */}
+                                            (
                                     <View style={{ width: SCREEN_WIDTH / 1.6, }}>
                                         <Text style={{ color: progress === 1 ? 'green' : 'blue', alignSelf: 'flex-end' }}>{`${Math.round(progress * 100)}%`}</Text>
                                         <View style={{ marginTop: '-4%' }}>
                                             <Progress.Bar progress={progress} width={200} color={progress === 1 ? 'green' : 'blue'} />
                                         </View>
                                     </View>
-                                    {/* )
-                                    } */}
+                                     )
+                                    }
                                 </View>
                             </View>
                         </View>

@@ -1,14 +1,18 @@
 import { View, Text, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Upload2 from '../../../../assets/imge/Register-imge/document-upload.svg'
 import DocumentPicker, { DocumentPickerResponse } from 'react-native-document-picker';
 import File2 from '../../../../assets/imge/Register-imge/document-text.svg'
 import Trash2 from '../../../../assets/imge/Register-imge/trash.svg'
 import { SCREEN_WIDTH } from '../../../../Utils/common';
+import * as Progress from 'react-native-progress';
+import Tick2 from '../../../../assets/imge/Register-imge/tick-circle.svg'
 const Permission_slip = () => {
     const [fileNames, setFileNames] = useState<any>([]);
     const [size, setSize] = useState<any>([]);
-    const [fileSelected, setFileSelected] = useState<boolean>(false); 
+    const [fileSelected, setFileSelected] = useState<boolean>(false);
+    const [icon, setIcon] = useState(<Trash2 width={30} height={30} />);
+    const [progress, setProgress] = useState(0);
 
     const Fileupload = async () => {
         try {
@@ -17,11 +21,23 @@ const Permission_slip = () => {
             });
             console.log(docs);
 
-            const names = docs.map(doc => doc.name);
+            const names = docs.map(doc => doc.name?.substring(0 , 10) + '....' );
             setFileNames(names);
-            const sizes = docs.map(doc => doc.size);
+            const sizes = docs.map(doc => Math.round(size/1024) +1);
             setSize(sizes);
             setFileSelected(true);
+
+            setProgress(0);
+            const intervalId = setInterval(() => {
+                setProgress((oldProgress) => {
+                    if (oldProgress === 1) {
+                        clearInterval(intervalId);
+                        return 1;
+                    }
+                    return Math.min(oldProgress + 0.2, 1);
+                });
+            }, 1000);
+
         } catch (err) {
             if (DocumentPicker.isCancel(err))
                 console.log("User cancelled the upload", err);
@@ -29,14 +45,23 @@ const Permission_slip = () => {
                 console.log(err);
         }
     }
-    const Delet=()=>{
+    useEffect(() => {
+        if (progress === 1) {
+            setIcon(<Tick2 width={30} height={30} />);
+            const timeoutId = setTimeout(() => {
+                setIcon(<Trash2 width={30} height={30} />);
+            }, 2000);
+            return () => clearTimeout(timeoutId);
+        }
+    }, [progress])
+    const Delet = () => {
         setFileSelected(false)
     }
     return (
         <View style={{ marginTop: '1%' }}>
             {!fileSelected ? (
                 <View style={{ marginTop: '10%' }}>
-                    <Text style={{ color: 'rgba(16, 17, 20, 1)', fontWeight: '400', }}>İcazə vərəqəsi <Text style={{color:'rgba(16, 17, 20, 1)', fontWeight:'200'}}> (sürücü üçün)</Text></Text>
+                    <Text style={{ color: 'rgba(16, 17, 20, 1)', fontWeight: '400', }}>İcazə vərəqəsi <Text style={{ color: 'rgba(16, 17, 20, 1)', fontWeight: '200' }}> (sürücü üçün)</Text></Text>
                     <TouchableOpacity style={{ borderWidth: 1, borderColor: "rgba(199, 198, 202, 1)", borderRadius: 10, marginTop: '5%', borderStyle: "dashed" }} onPress={() => Fileupload()}>
                         <View style={{ alignSelf: 'center', backgroundColor: 'rgba(250, 249, 253, 1)', width: 70, height: 70, borderRadius: 50, alignItems: 'center', marginVertical: '4%' }}>
                             <View style={{ marginTop: '15%' }}>
@@ -53,7 +78,7 @@ const Permission_slip = () => {
                 </View>
             ) : (
                 <View>
-                    <Text style={{ color: 'rgba(16, 17, 20, 1)', fontWeight: '400', marginVertical:'5%' }}>İcazə vərəqəsi <Text style={{color:'rgba(16, 17, 20, 1)', fontWeight:'200'}}> (sürücü üçün)</Text></Text>
+                    <Text style={{ color: 'rgba(16, 17, 20, 1)', fontWeight: '400', marginVertical: '5%' }}>İcazə vərəqəsi <Text style={{ color: 'rgba(16, 17, 20, 1)', fontWeight: '200' }}> (sürücü üçün)</Text></Text>
                     <View style={{ borderWidth: 1, borderColor: 'rgba(199, 198, 202, 1)', borderRadius: 10, display: 'flex', flexDirection: 'row', justifyContent: 'space-around', width: SCREEN_WIDTH - 50, padding: '4%' }}>
                         <View style={{ display: 'flex', flexDirection: 'row', }}>
                             <File2 width={30} height={30} />
@@ -63,11 +88,29 @@ const Permission_slip = () => {
                                 <TouchableOpacity>
                                     <Text style={{ color: 'rgba(64, 120, 197, 1)', marginTop: '5%', marginBottom: '2%' }}>Baxmaq üçün klikləyin</Text>
                                 </TouchableOpacity>
+                                <View >
+                                    {
+                                        progress === 1
+                                            ?
+                                            (
+                                                null
+                                            )
+                                            :
+                                            (
+                                                <View style={{ width: SCREEN_WIDTH / 1.6, }}>
+                                                    <Text style={{ color: progress === 1 ? 'green' : 'blue', alignSelf: 'flex-end' }}>{`${Math.round(progress * 100)}%`}</Text>
+                                                    <View style={{ marginTop: '-4%' }}>
+                                                        <Progress.Bar progress={progress} width={200} color={progress === 1 ? 'green' : 'blue'} />
+                                                    </View>
+                                                </View>
+                                            )
+                                    }
+                                </View>
                             </View>
                         </View>
                         <View style={{}}>
-                            <TouchableOpacity onPress={()=>Delet()}>
-                                <Trash2 width={30} height={30} />
+                            <TouchableOpacity onPress={() => Delet()}>
+                                {icon}
                             </TouchableOpacity>
                         </View>
                     </View>

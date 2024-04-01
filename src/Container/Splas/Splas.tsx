@@ -78,11 +78,15 @@ const Splas = ({ navigation }: any) => {
           }
         </View>
         <View >
-          <Animated.View style={[sizeStyle, { position: 'absolute', alignSelf: 'center', flex: 1, alignItems: 'center' }]} />
+          {/* <Animated.View style={[sizeStyle, { position: 'absolute', alignSelf: 'center', flex: 1, alignItems: 'center' }]} /> */}
           <View style={{ alignSelf: 'center' }}>
             <Imegecenter width={500} height={400} />
           </View>
         </View>
+      </View>
+      <View style={{position:'absolute', justifyContent:'center', alignSelf:'center', zIndex:-2}}>
+        <Animated.View style={[sizeStyle, { position: 'absolute', alignSelf: 'center', flex: 1, alignItems: 'center' }]} />
+
       </View>
     </Animated.View>
   )
