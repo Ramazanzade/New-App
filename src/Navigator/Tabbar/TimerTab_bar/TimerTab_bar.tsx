@@ -8,11 +8,11 @@ const TimerTab_bar = () => {
     return (
         <Tab.Navigator
             screenOptions={{
-                tabBarLabelStyle: { fontSize: 25, },
-                tabBarStyle: { backgroundColor: '#E5E7EB', borderRadius: 30, height: 60, borderWidth: 1, borderColor: '#A1A8B0' },
-                tabBarActiveTintColor: '#199A8E',
-                tabBarIndicatorStyle: { backgroundColor: 'transparent' },
-
+                tabBarLabelStyle: { fontSize: 13, },
+                tabBarStyle: { height: 50, borderWidth:0.5 , borderColor:'rgba(66, 71, 81, 1)'},
+                tabBarActiveTintColor: 'rgba(16, 17, 20, 1)',
+                tabBarIndicatorStyle: { backgroundColor: 'rgba(0, 80, 155, 1)' },
+                
             }}
 
         >

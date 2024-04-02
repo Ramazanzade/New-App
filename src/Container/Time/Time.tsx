@@ -6,8 +6,7 @@ const Time = () => {
   return (
     <View style={{ backgroundColor: '#FFFFFF', flex: 1 }}>
       <Text style={{ color: 'rgba(16, 17, 20, 1)', width: SCREEN_WIDTH - 40, alignSelf: 'center', marginTop: '3%', fontSize: 17 }}>Gedişlər</Text>
-      <View style={{ height: 0.5, backgroundColor: 'rgba(66, 71, 81, 1)', marginTop: '2%' }}></View>
-      <View style={{flex:1}}>
+      <View style={{flex:1, marginTop:'5%'}}>
         <TimerTab_bar></TimerTab_bar>
       </View>
     </View>
