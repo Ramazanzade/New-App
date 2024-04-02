@@ -1,13 +1,18 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import NotificationScreen1 from '../../assets/imge/Tabbar-imge/Icon.svg';
+import TimeScreen1 from '../../assets/imge/Tabbar-imge/Icon.svg';
 import HomeScreen1 from '../../assets/imge/Tabbar-imge/state-layer.svg';
-import ChatScreen1 from '../../assets/imge/Tabbar-imge/Icon (1).svg';
-import TimeScreen1 from '../../assets/imge/Tabbar-imge/Vector.svg'
+import NotificationScreen1 from '../../assets/imge/Tabbar-imge/Icon (1).svg';
+import ChatScreen1 from '../../assets/imge/Tabbar-imge/Vector.svg'
 import HomeScreen from '../Stcak/HomeStack/HomeScreen';
 import TimeScreen from '../Stcak/TimeStack/TimeScreen';
 import NotificationScreen from '../Stcak/NotificationStack/NotificationScreen';
 import ChatScreen from '../Stcak/ChatStack/ChatScreen';
+import H1 from '../../assets/imge/Tabbar-imge/4.svg'
+import C1 from '../../assets/imge/Tabbar-imge/1.svg'
+import N1 from '../../assets/imge/Tabbar-imge/2.svg'
+import T1 from '../../assets/imge/Tabbar-imge/3.svg'
+
 const Tab = createBottomTabNavigator();
 
 
@@ -28,13 +33,13 @@ const Tabbar = ({navigation}:any) => {
           let IconComponent: any;
 
           if (route.name === 'HomeScreen') {
-            IconComponent = HomeScreen1;
+            IconComponent = focused ? HomeScreen1 : H1;
           } else if (route.name === 'TimeScreen') {
-            IconComponent =  TimeScreen1 ;
+            IconComponent = focused ? T1 : TimeScreen1;
           } else if (route.name === 'NotificationScreen') {
-            IconComponent =NotificationScreen1;
+            IconComponent = focused ? N1 : NotificationScreen1;
           } else if (route.name === 'ChatScreen') {
-            IconComponent = ChatScreen1 ;
+            IconComponent = focused ? C1 : ChatScreen1  ;
           }
 
           return <IconComponent color={focused ? "green" : "red"} size={35} />;

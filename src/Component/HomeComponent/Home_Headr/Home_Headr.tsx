@@ -10,10 +10,9 @@ import Online_index from '../Online/Online_index';
 import X from '../../../assets/imge/Home-imge/x.svg'
 import N from '../../../assets/imge/Home-imge/!.svg'
 import { ButtonContext } from '../../../Context/ButtonContext/ButtonContext'
-const Home_Headr = ({navigation}:any) => {
+const Home_Headr = ({ navigation }: any) => {
     const [switchValue, setSwitchValue] = useState(false);
     const { button, setButton } = useContext(ButtonContext);
-
     const toggleSwitch = (value: any) => {
         setSwitchValue(value);
     };
@@ -53,23 +52,25 @@ const Home_Headr = ({navigation}:any) => {
                         )}
                     />
                 </View>
-                {
-                    switchValue
-                        ?
-                        <View style={{ alignSelf: 'center' }}>
-                            <View style={{ width: 45, height: 45, backgroundColor: '#FDFBFF', borderRadius: 55, alignSelf: 'center', alignItems: "center", paddingTop: '19%' }} >
-                                {button ? (
-                                    <TouchableOpacity onPress={() =>navigation.navigate('Order_CancellationScreen')}>
-                                        <N width={25} height={25} />
-                                    </TouchableOpacity>
-                                ) : (
-                                    <X width={25} height={25} />
-                                )}
+                <View>
+                    {
+                        switchValue
+                            ?
+                            <View style={{ alignSelf: 'center' }}>
+                                <View style={{ width: 45, height: 45, backgroundColor: '#FDFBFF', borderRadius: 55, alignSelf: 'center', alignItems: "center", paddingTop: '19%' }} >
+                                    {button ? (
+                                        <TouchableOpacity onPress={() => navigation.navigate('Order_CancellationScreen')}>
+                                            <N width={25} height={25} />
+                                        </TouchableOpacity>
+                                    ) : (
+                                        <X width={25} height={25} />
+                                    )}
+                                </View>
                             </View>
-                        </View>
-                        :
-                        null
-                }
+                            :
+                            null
+                    }
+                </View>
             </View>
             <View style={{ width: SCREEN_WIDTH, justifyContent: 'flex-end' }}>
                 {switchValue
