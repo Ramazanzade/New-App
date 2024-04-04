@@ -18,17 +18,22 @@ const calculateDates = () => {
 const datesOfTheWeek = calculateDates();
 const Header = () => {
     const [select, setselect] = useState(null)
-    const [status , setstatus]= useContext(StatusContext)
+    const { status, setstatus } = useContext(StatusContext);
     const Handle = (dayIndex: any) => {
         setselect(dayIndex)
+        setstatus(false)
+    }
+    const handle2 = () => {
         setstatus(!status)
+        console.log('Status changed:', !status);
+        
     }
     return (
         <View style={{ display: 'flex', flexDirection: 'row', marginTop: '3%' }}>
             {daysOfWeek.map((day, index) => (
 
-                <TouchableOpacity key={day} style={{ display: 'flex', flexDirection: 'column', margin: '0.5%', borderRadius: 10, paddingHorizontal: 15, paddingVertical: 10,  backgroundColor: select === index ? 'rgba(0, 80, 155, 1)' : 'transparent '}} onPress={() => Handle(index)}>
-                    {[4].includes(index) && <View style={{justifyContent:'flex-end', alignSelf:'flex-end', position:'absolute', marginTop:'15%'}}><Status width={15}  height={15}/></View>}
+                <TouchableOpacity key={day} style={{ display: 'flex', flexDirection: 'column', margin: '0.5%', borderRadius: 10, paddingHorizontal: 15, paddingVertical: 10, backgroundColor: select === index ? 'rgba(0, 80, 155, 1)' : 'transparent', }} onPress={() => Handle(index)}>
+                    {[4].includes(index) && <TouchableOpacity style={{ justifyContent: 'flex-end', alignSelf: 'flex-end', position: 'absolute', marginTop: '15%' }} onPress={()=>handle2( )} ><Status width={15} height={15} /></TouchableOpacity>}
                     <Text style={{ color: select === index ? '#FFFFFF' : 'rgba(70, 71, 74, 1)', textAlign: 'center', fontSize: 11 }}>{day}</Text>
                     <Text style={{ color: select === index ? '#FFFFFF' : 'rgba(70, 71, 74, 1)', textAlign: 'center', marginTop: '8%', fontSize: 11 }}>{datesOfTheWeek[index]}</Text>
                 </TouchableOpacity>
