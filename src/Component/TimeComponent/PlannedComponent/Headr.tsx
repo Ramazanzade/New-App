@@ -22,10 +22,11 @@ const Header = () => {
     const Handle = (dayIndex: any) => {
         setselect(dayIndex)
         setstatus(false)
+        
     }
     const handle2 = () => {
-        setstatus(!status)
-        console.log('Status changed:', !status);
+        setstatus(true)
+        console.log('Status :changed', !status);
         
     }
     return (
