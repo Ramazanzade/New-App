@@ -7,7 +7,6 @@ const Completed = ({navigation}:any) => {
   return (
     <View style={{ backgroundColor: '#FFFFFF', flex: 1 }}>
       <Body_Null navigation={navigation}/>
-      <Detail_index/>
     </View>
   )
 }
