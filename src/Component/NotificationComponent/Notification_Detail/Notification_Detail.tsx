@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, FlatList, PanResponder, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, FlatList, PanResponder } from 'react-native'
 import React, { useEffect, useRef } from 'react'
 import Icon1 from '../../../assets/imge/Notification-imge/Icon set (1).svg'
 import Icon2 from '../../../assets/imge/Notification-imge/Icon set.svg'
@@ -12,19 +12,20 @@ const data = [
     { id: 5, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', icon: Icon1, status: false },
 ]
 const Notification_Detail = () => {
-    const RightItem = () => {
+    const LeftItem = () => {
         return (
-          <View >
-          <Text style={{color:'red'}}>Salam</Text>
-          </View>
+            <View>
+                <Text style={{color:'red'}}>Open</Text>
+            </View>
         );
-      };
+    };
     const renderItem = (item: any) => {
         const Icon = item.icon ? item.icon : null;
         return (
             <Swipeable
-            renderLeftActions={(progress, dragx) => <RightItem />}
-            
+            onSwipeableLeftOpen={() => console.log('Swiped Leftt')}
+            onSwipeableRightOpen={() => console.log('Swiped right')}
+            renderLeftActions={(progress, dragx) => <LeftItem />}
            >
             <View style={{ flex: 1, flexDirection: 'row', marginVertical: '5%' }}>
                 <View style={{ alignSelf: 'center', marginHorizontal: '2%' }}>
@@ -81,105 +82,5 @@ const Notification_Detail = () => {
         </View>
     )
 }
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'space-around',
-      flexDirection: 'column',
-      backgroundColor: '#eee',
-    },
-    titleWrapper: {
-      alignItems: 'flex-start',
-    },
-    title: {
-      fontSize: 35,
-      fontWeight: 'bold',
-      marginLeft: 20,
-      color: 'black',
-      marginVertical: 20,
-    },
-    leftItem: {
-      flex:1,
-      backgroundColor: '#76a21e',
-      justifyContent: 'center',
-    },
-    archiveButtonStyle: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flex: 1,
-      backgroundColor: '#3e64ff',
-    },
-    archiveTextButtonStyle:{
-      textAlign: 'center',
-      color: 'white',
-      fontWeight: 'bold',
-    },
-    textButtonStyle: {
-      textAlign: 'center',
-      color: 'white',
-      fontWeight: 'bold',
-    },
-    deleteButtonStyle: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flex: 1,
-      backgroundColor: '#c00000',
-    },
-    rightItem: {
-      flex: 1,
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      backgroundColor: 'yellow',
-    },
-    leftItemText: {
-      fontSize: 20,
-      fontWeight: 'bold',
-      marginLeft:20,
-      color: '#fff',
-    },
-    listItemWrapper: {
-      flex: 1,
-      flexDirection: 'column',
-    },
-  
-    listItem: {
-      paddingHorizontal: 10,
-      justifyContent: 'center',
-      borderTopWidth: 0.6,
-      borderBottomWidth: 0.6,
-      borderBottomColor: '#ccc',
-      borderTopColor: '#ccc',
-      flex: 1,
-      height: 60,
-      backgroundColor: '#fff',
-    },
-    item2: {
-      flex: 4,
-      justifyContent: 'center',
-    },
-    item: {
-      flex: 2,
-      flexDirection: 'column',
-      justifyContent: 'center',
-    },
-    textBtn: {
-      textAlign: 'center',
-      fontWeight: 'bold',
-    },
-    btn: {
-      backgroundColor: '#ccc',
-      padding: 10,
-      borderRadius: 6,
-      width: '80%',
-      margin: 5,
-      alignSelf: 'center',
-    },
-    description: {
-      fontSize: 16,
-      color: '#000',
-    },
-  });
 
 export default Notification_Detail
