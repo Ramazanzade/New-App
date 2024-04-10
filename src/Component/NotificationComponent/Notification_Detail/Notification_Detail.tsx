@@ -1,9 +1,9 @@
-import { View, Text, TouchableOpacity, FlatList, Animated } from 'react-native'
+import { View, Text, TouchableOpacity, FlatList, PanResponder } from 'react-native'
 import React, { useEffect, useRef } from 'react'
 import Icon1 from '../../../assets/imge/Notification-imge/Icon set (1).svg'
 import Icon2 from '../../../assets/imge/Notification-imge/Icon set.svg'
 import Delet from '../../../assets/imge/Notification-imge/Frame.svg'
-import { SvgUri } from 'react-native-svg'
+import { PanGestureHandler } from 'react-native-gesture-handler';
 const data = [
     { id: 1, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', icon: Icon1, status: true },
     { id: 2, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Ödəniş', des: 'Ödəniş', icon: Icon2, status: true },
@@ -12,12 +12,26 @@ const data = [
     { id: 5, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', icon: Icon1, status: false },
 ]
 const Notification_Detail = () => {
-    const translateX = useRef(new Animated.Value(0)).current;
+
     const renderItem = (item: any) => {
         const Icon = item.icon ? item.icon : null;
+        const panResponder = useRef(
+            PanResponder.create({
+                onStartShouldSetPanResponder: () => true,
+                onMoveShouldSetPanResponder: () => true,
+                onPanResponderMove: (event, gestureState) => {
+                    console.log('MoveX:', gestureState.dx);
+                    console.log('MoveY:', gestureState.dy);
+                },
+                onPanResponderRelease: (event, gestureState) => {
+                    console.log('ReleaseX:', gestureState.dx);
+                    console.log('ReleaseY:', gestureState.dy);
+                },
+            })
+        ).current;
         return (
-       
-                <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', marginVertical: '5%', }} >
+            <PanGestureHandler {...panResponder.panHandlers} >
+                <View style={{ flex: 1, flexDirection: 'row', marginVertical: '5%' }}>
                     <View style={{ alignSelf: 'center', marginHorizontal: '2%' }}>
                         {
                             item.status === true
@@ -57,7 +71,8 @@ const Notification_Detail = () => {
                             <Text style={{ color: 'rgba(109, 109, 109, 1)', fontSize: 11 }}>{item.text}</Text>
                         </View>
                     </View>
-                </TouchableOpacity>
+                </View>
+            </PanGestureHandler>
         )
     }
     return (
