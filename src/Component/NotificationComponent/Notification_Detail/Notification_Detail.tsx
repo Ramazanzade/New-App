@@ -1,9 +1,10 @@
-import { View, Text, TouchableOpacity, FlatList, PanResponder } from 'react-native'
-import React, { useEffect, useRef } from 'react'
+import { View, Text, TouchableOpacity, FlatList, PanResponder, StyleSheet } from 'react-native'
+import React, { createRef, useEffect, useRef } from 'react'
 import Icon1 from '../../../assets/imge/Notification-imge/Icon set (1).svg'
 import Icon2 from '../../../assets/imge/Notification-imge/Icon set.svg'
 import Delet from '../../../assets/imge/Notification-imge/Frame.svg'
 import { SwipeListView } from 'react-native-swipe-list-view';
+import { SCREEN_WIDTH } from '../../../Utils/common'
 const data = [
     { id: 1, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', icon: Icon1, status: true },
     { id: 2, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Ödəniş', des: 'Ödəniş', icon: Icon2, status: true },
@@ -15,7 +16,9 @@ const Notification_Detail = () => {
     const renderItem = (item: any) => {
         const Icon = item.icon ? item.icon : null;
         return (
-            <View style={{ flex: 1, flexDirection: 'row', marginVertical: '5%' }}>
+            <View style={{
+                flex: 1, flexDirection: 'row', marginVertical: '5%', width: SCREEN_WIDTH
+            }}>
                 <View style={{ alignSelf: 'center', marginHorizontal: '2%' }}>
                     {
                         item.status === true
@@ -60,20 +63,16 @@ const Notification_Detail = () => {
         )
     }
     const renderHiddenItem = (data: any) => (
-        <View style={{justifyContent:'center', alignItems:'center'}}>
+        <View style={{
+            alignItems: 'center', flex: 1, flexDirection: 'row', justifyContent: 'flex-end',
+        }}>
             <TouchableOpacity
                 style={{
-                    alignItems: 'center',
-                    bottom: 0,
-                    justifyContent: 'center',
-                    position: 'absolute',
-                    top: 0,
                     width: 55,
                     backgroundColor: 'rgba(92, 146, 225, 1)',
-                    right: 0,
-                    height: 70,
-                    alignSelf: 'center'
-
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '80%',
                 }}
                 onPress={() => {
                     console.log('Delete pressed', data.item);
@@ -83,17 +82,17 @@ const Notification_Detail = () => {
             </TouchableOpacity>
         </View>
     );
+
     return (
         <View style={{ flex: 1 }}>
             <SwipeListView
                 data={data}
                 renderItem={({ item }) => renderItem(item)}
-                keyExtractor={item => item.id.toString()}
+                keyExtractor={(item) => item.id.toString()}
                 renderHiddenItem={renderHiddenItem}
                 rightOpenValue={-75}
             />
         </View>
     )
 }
-
 export default Notification_Detail
