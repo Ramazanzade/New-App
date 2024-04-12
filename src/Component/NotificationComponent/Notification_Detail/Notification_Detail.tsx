@@ -17,8 +17,7 @@ const Notification_Detail = () => {
         const Icon = item.icon ? item.icon : null;
         return (
             <View style={{
-                flex: 1, flexDirection: 'row', marginVertical: '5%', width: SCREEN_WIDTH
-            }}>
+                flex: 1, flexDirection: 'row', marginVertical: '2%', width: SCREEN_WIDTH, backgroundColor:'rgba(253, 251, 255, 1)',            }}>
                 <View style={{ alignSelf: 'center', marginHorizontal: '2%' }}>
                     {
                         item.status === true
@@ -72,7 +71,8 @@ const Notification_Detail = () => {
                     backgroundColor: 'rgba(92, 146, 225, 1)',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    height: '80%',
+                    
+                 
                 }}
                 onPress={() => {
                     console.log('Delete pressed', data.item);
