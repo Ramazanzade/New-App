@@ -7,21 +7,34 @@ import Data from '../Fake_data.json'
 import İmge from "../../../assets/imge/Chat-imge/12.svg"
 import İmge1 from "../../../assets/imge/Chat-imge/13.svg"
 import İmge2 from "../../../assets/imge/Chat-imge/14.svg"
-import İmge3 from "../../../assets/imge/Chat-imge/1.svg"
+import İmge3 from "../../../assets/imge/Chat-imge/Picture 2.svg"
 
-const ChatHome = () => {
+const ChatHome = ({navigation}:any) => {
     const icons = {
-        truck:Order,
-        heart:Favorites,
-        star:Reviews,
-        add:Informations,
-};
-    const renderItem = (item: any) => {
-        return (
-            <View>
+        Imge1: İmge,
+        Imge2: İmge1,
+        Imge3: İmge2,
+        Imge4: İmge,
+    };
+    type Item = {
+        imge:string;
+        text: string;
+        detail: string;
+        id: number
+    };
+    const Touc = (data:any)=>{
+        navigation.navigate('Ready_answer',  {data:Data}); 
+        console.log(data);
+        
 
-                <Text style={{color:'red'}}>{item.text}</Text>
-            </View>
+    }
+    const renderItem = ({ item }: { item: Item }) => {
+        const Icon = icons[item.imge as keyof typeof icons];
+        return (
+            <TouchableOpacity style={{justifyContent:'space-between', marginTop:'7%'}} onPress={()=>Touc(item)}>
+                <Icon />
+                <Text style={{ color: 'rgba(16, 17, 20, 1)', fontSize:11, width:'70%' }}>{item.text}</Text>
+            </TouchableOpacity>
         )
     }
     return (
@@ -45,10 +58,12 @@ const ChatHome = () => {
                 <View>
                     <FlatList
                         data={Data}
-                        renderItem={({ item }) => renderItem(item)}
+                        renderItem={(item) => renderItem(item)}
                         keyExtractor={(item) => item.id.toString()}
-                    
-                        
+                        numColumns={2}
+                        key={2}
+                        style={{width:SCREEN_WIDTH-40, alignSelf:'center'}}
+                        columnWrapperStyle={{ justifyContent: 'space-between' }}
                     />
                 </View>
             </View>
