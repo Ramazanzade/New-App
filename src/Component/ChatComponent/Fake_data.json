@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "text": "Müştəri ilə problem yarandıqda",
+        "detail": "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem  1.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem   2.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem  3.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem .  Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ",
+        "imge": "Imge1"
+    },
+    {
+        "id": 2,
+        "text": "Sürücü reytinqini necə yaxşılaşdırmalı",
+        "detail": "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem  1.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem   2.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem  3.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem .  Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ",
+        "imge": "Imge2"
+    },
+    {
+        "id": 3,
+        "text": "Təhlükəsizliyin qorunması",
+        "detail": "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem  1.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem   2.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem  3.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem .  Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ",
+        "imge": "Imge3"
+    },
+    {
+        "id": 4,
+        "text": "Yolda problem yaranarsa",
+        "detail": "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem  1.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem   2.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem  3.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem .  Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ",
+        "imge": "Imge3"
+    },
+    {
+        "id": 5,
+        "text": "Yolda problem yaranarsa",
+        "detail": "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem  1.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem   2.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem  3.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem .  Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ",
+        "imge": "Imge3"
+    }
+]

@@ -1,23 +1,25 @@
 import { View, Text, TouchableOpacity, FlatList, PanResponder, StyleSheet } from 'react-native'
-import React, { createRef, useEffect, useRef } from 'react'
+import React, { createRef, useEffect, useRef, useState } from 'react'
 import Icon1 from '../../../assets/imge/Notification-imge/Icon set (1).svg'
 import Icon2 from '../../../assets/imge/Notification-imge/Icon set.svg'
 import Delet from '../../../assets/imge/Notification-imge/Frame.svg'
 import { SwipeListView } from 'react-native-swipe-list-view';
 import { SCREEN_WIDTH } from '../../../Utils/common'
-const data = [
-    { id: 1, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', icon: Icon1, status: true },
-    { id: 2, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Ödəniş', des: 'Ödəniş', icon: Icon2, status: true },
-    { id: 3, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', icon: Icon1, status: false },
-    { id: 4, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', des: 'Xatırladıcı', icon: Icon2, status: false },
-    { id: 5, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', icon: Icon1, status: false },
-]
+
 const Notification_Detail = () => {
+    const [notificationData, setNotificationData] = useState([
+        { id: 1, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', icon: Icon1, status: true },
+        { id: 2, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Ödəniş', des: 'Ödəniş', icon: Icon2, status: true },
+        { id: 3, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', icon: Icon1, status: false },
+        { id: 4, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', des: 'Xatırladıcı', icon: Icon2, status: false },
+        { id: 5, not: '#14l56 nömrəli sifarişin ləğv edildi', date: '2 saat əvvəl', text: ' • Sifarişlər', icon: Icon1, status: false },
+    ]);
     const renderItem = (item: any) => {
         const Icon = item.icon ? item.icon : null;
         return (
             <View style={{
-                flex: 1, flexDirection: 'row', marginVertical: '2%', width: SCREEN_WIDTH, backgroundColor:'rgba(253, 251, 255, 1)',            }}>
+                flex: 1, flexDirection: 'row', marginVertical: '2%', width: SCREEN_WIDTH, backgroundColor: 'rgba(253, 251, 255, 1)', padding: '2%'
+            }}>
                 <View style={{ alignSelf: 'center', marginHorizontal: '2%' }}>
                     {
                         item.status === true
@@ -61,6 +63,11 @@ const Notification_Detail = () => {
 
         )
     }
+
+    const deleteItem = (id: any) => {
+        const updatedData = notificationData.filter(item => item.id !== id);
+        setNotificationData(updatedData);
+    };
     const renderHiddenItem = (data: any) => (
         <View style={{
             alignItems: 'center', flex: 1, flexDirection: 'row', justifyContent: 'flex-end',
@@ -71,11 +78,11 @@ const Notification_Detail = () => {
                     backgroundColor: 'rgba(92, 146, 225, 1)',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    
-                 
+                    height: 45,
+                    padding: '2%',
                 }}
                 onPress={() => {
-                    console.log('Delete pressed', data.item);
+                    deleteItem(data.item.id);
                 }}
             >
                 <Delet width={25} height={25} />
@@ -86,7 +93,7 @@ const Notification_Detail = () => {
     return (
         <View style={{ flex: 1 }}>
             <SwipeListView
-                data={data}
+                data={notificationData}
                 renderItem={({ item }) => renderItem(item)}
                 keyExtractor={(item) => item.id.toString()}
                 renderHiddenItem={renderHiddenItem}
