@@ -7,7 +7,7 @@ const Ready_answer_body = () => {
     const {data} = route.params;
     return (
     <View>
-      <Text style={{color:'red'}}>{data}</Text>
+      <Text style={{color:'red'}}>{data.detail}</Text>
     </View>
   )
 }
