@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, FlatList } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Chat from '../../../assets/imge/Chat-imge/Frame.svg'
 import Left from '../../../assets/imge/Chat-imge/15.svg'
 import { SCREEN_WIDTH } from '../../../Utils/common'
@@ -9,7 +9,8 @@ import İmge1 from "../../../assets/imge/Chat-imge/13.svg"
 import İmge2 from "../../../assets/imge/Chat-imge/14.svg"
 import İmge3 from "../../../assets/imge/Chat-imge/Picture 2.svg"
 
-const ChatHome = ({navigation}:any) => {
+const ChatHome = ({ navigation }: any) => {
+    const [data , setdata]=useState(Data)    
     const icons = {
         Imge1: İmge,
         Imge2: İmge1,
@@ -17,23 +18,25 @@ const ChatHome = ({navigation}:any) => {
         Imge4: İmge,
     };
     type Item = {
-        imge:string;
+        imge: string;
         text: string;
         detail: string;
         id: number
     };
-    const Touc = (data:any)=>{
-        navigation.navigate('Ready_answer',  {data:Data}); 
+    const Touc = (data: any) => {
+        navigation.navigate('Ready_answer', { data: Data });
         console.log(data);
-        
+
 
     }
     const renderItem = ({ item }: { item: Item }) => {
         const Icon = icons[item.imge as keyof typeof icons];
         return (
-            <TouchableOpacity style={{justifyContent:'space-between', marginTop:'7%'}} onPress={()=>Touc(item)}>
+            <TouchableOpacity style={{ justifyContent: 'space-between', marginTop: '7%' }} onPress={() => {
+                navigation.navigate('Ready_answer', { add: data });
+            }}>
                 <Icon />
-                <Text style={{ color: 'rgba(16, 17, 20, 1)', fontSize:11, width:'70%' }}>{item.text}</Text>
+                <Text style={{ color: 'rgba(16, 17, 20, 1)', fontSize: 11, width: '70%' }}>{item.text}</Text>
             </TouchableOpacity>
         )
     }
@@ -62,7 +65,7 @@ const ChatHome = ({navigation}:any) => {
                         keyExtractor={(item) => item.id.toString()}
                         numColumns={2}
                         key={2}
-                        style={{width:SCREEN_WIDTH-40, alignSelf:'center'}}
+                        style={{ width: SCREEN_WIDTH - 40, alignSelf: 'center' }}
                         columnWrapperStyle={{ justifyContent: 'space-between' }}
                     />
                 </View>
