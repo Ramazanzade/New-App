@@ -33,7 +33,7 @@ const ChatHome = ({ navigation }: any) => {
         const Icon = icons[item.imge as keyof typeof icons];
         return (
             <TouchableOpacity style={{ justifyContent: 'space-between', marginTop: '7%' }} onPress={() => {
-                navigation.navigate('Ready_answer', { add: data });
+                navigation.navigate('Ready_answer', { data: item });
             }}>
                 <Icon />
                 <Text style={{ color: 'rgba(16, 17, 20, 1)', fontSize: 11, width: '70%' }}>{item.text}</Text>
