@@ -45,7 +45,7 @@ const ChatHome = ({ navigation }: any) => {
             <View>
                 <Text style={{ color: 'rgba(16, 17, 20, 1)', textAlign: 'center', fontSize: 22, marginTop: '3%' }}>Sizə necə kömək edə bilərik?</Text>
             </View>
-            <TouchableOpacity style={{ backgroundColor: '#4078C5', borderRadius: 5, marginTop: '3%', display: 'flex', flexDirection: 'row', width: SCREEN_WIDTH - 40, alignSelf: 'center', justifyContent: 'space-between', padding: '4%' }}>
+            <TouchableOpacity style={{ backgroundColor: '#4078C5', borderRadius: 5, marginTop: '3%', display: 'flex', flexDirection: 'row', width: SCREEN_WIDTH - 40, alignSelf: 'center', justifyContent: 'space-between', padding: '4%' }} onPress={()=>navigation.navigate('Chat_MessageScreen')}>
                 <View style={{ display: 'flex', flexDirection: 'row' }}>
                     <View style={{ alignSelf: 'center', marginRight: '5%' }}>
                         <Chat />
