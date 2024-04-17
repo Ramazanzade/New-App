@@ -1,97 +1,97 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { GiftedChat } from 'react-native-gifted-chat';
-import Kamera from '../../../assets/imge/Chat-imge/Icon set.svg'
+import React, { useState, useEffect, useCallback } from 'react';
+import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
+import { Bubble, GiftedChat, Send } from 'react-native-gifted-chat';
 import Sendicon from '../../../assets/imge/Chat-imge/Send Solid.svg'
-const Message = ({ navigation }: any) => {
+import Kamera from '../../../assets/imge/Chat-imge/Icon set.svg'
+const Message = () => {
   const [messages, setMessages] = useState<any>([]);
-  const [isTyping, setIsTyping] = useState<any>(false);
-  const [isOnline, setIsOnline] = useState<any>(true);
+
   useEffect(() => {
-    const receivedMessage = {
-      _id: Math.random(),
-      text: '',
-      createdAt: new Date(),
-      user: {
-        _id: 2,
-        name: 'Nizam Ramazanzadə',
-        avatar: 'https://placeimg.com/50/50/people',
+    setMessages([
+      {
+        _id: 1,
+        text: 'Nizam Ramazanzadə',
+        createdAt: new Date(),
+        user: {
+          _id: 2,
+          name: 'React Native',
+          avatar: 'https://placeimg.com/140/140/any',
+        },
       },
-    };
-    const typingTimeout = setTimeout(() => {
-      setIsTyping(false);
-    }, 2000);
 
-    setMessages((previousMessages: any) =>
-      GiftedChat.append(previousMessages, [receivedMessage])
-    );
-
-    return () => clearTimeout(typingTimeout);
+    ]);
   }, []);
 
-  const onSend: any = (newMessages = []) => {
-    setMessages((previousMessages: any) => GiftedChat.append(previousMessages, newMessages));
-    setIsTyping(false);
+  const onSend: any = useCallback((messages = []) => {
+    setMessages((previousMessages: any) =>
+      GiftedChat.append(previousMessages, messages),
+    );
+  }, []);
+
+  const renderSend = (props: any) => {
+    return (
+      <Send {...props}>
+        <View style={{ alignSelf: 'flex-end', justifyContent: 'flex-end', backgroundColor: 'red' }}>
+          <Sendicon />
+        </View>
+      </Send>
+    );
   };
-  const handleSendPress = () => {
-  const newMessage = {
-    _id: Math.random(),
-    text: 'Your message text here',
-    createdAt: new Date(),
-    user: {
-      _id: 1,
-      name: 'Your Name',
-      avatar: 'https://placeimg.com/50/50/people',
-    },
+
+  const renderBubble = (props: any) => {
+    return (
+      <Bubble
+        {...props}
+        wrapperStyle={{
+          right: {
+            backgroundColor: '#2e64e5',
+          },
+        }}
+        textStyle={{
+          right: {
+            color: '#fff',
+          },
+        }}
+      />
+    );
   };
-  onSend([newMessage]);
-};
+
+  const scrollToBottomComponent = () => {
+    return (
+      <Sendicon />
+    );
+  }
+
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{flex:1}}>
       <GiftedChat
         messages={messages}
-        onSend={(newMessages: any) => onSend(newMessages)}
+        onSend={(messages) => onSend(messages)}
         user={{
           _id: 1,
         }}
-        onInputTextChanged={(text) => {
-          setIsTyping(text.length > 0);
-        }}
-        placeholder={isTyping ? 'Typing...' : isOnline ? 'Online' : 'Offline'}
-        renderSend={(props) =>
-          <TouchableOpacity onPress={()=>handleSendPress()}>
-            <Sendicon   {...props} />
-          </TouchableOpacity>
-        }
-        renderAvatar={null}
-        renderUsernameOnMessage={true}
+        renderBubble={renderBubble}
+        alwaysShowSend
+        renderSend={renderSend}
+        scrollToBottom
+        scrollToBottomComponent={scrollToBottomComponent}
         textInputProps={{
-          style: { color: 'black' }
+          style: { color: 'black', },
+
         }}
+        
       />
     </View>
   );
 };
 
 
-export default Message
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default Message;
