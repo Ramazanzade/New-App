@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
-import { Bubble, GiftedChat, Send } from 'react-native-gifted-chat';
+import { Bubble, GiftedChat, InputToolbar, Send } from 'react-native-gifted-chat';
 import Sendicon from '../../../assets/imge/Chat-imge/Send Solid.svg'
 import Kamera from '../../../assets/imge/Chat-imge/Icon set.svg'
 const Message = () => {
@@ -63,7 +63,7 @@ const Message = () => {
   }
 
   return (
-    <View style={{flex:1}}>
+    <View style={{ flex: 1, borderWidth: 5, borderColor: 'black', padding: 10 }}>
       <GiftedChat
         messages={messages}
         onSend={(messages) => onSend(messages)}
@@ -79,7 +79,12 @@ const Message = () => {
           style: { color: 'black', },
 
         }}
-        
+        renderInputToolbar={() => {
+          return <InputToolbar
+            containerStyle={{ borderWidth: 2, borderRadius: 5, padding: '2%' }}
+          />
+        }}
+
       />
     </View>
   );
