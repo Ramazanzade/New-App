@@ -29,26 +29,22 @@ const Message = () => {
 
   const renderSend = (props: any) => {
     return (
-      <View style={{ display: 'flex', flexDirection: 'row', flex: 1, justifyContent: 'space-between' }}>
+      <View style={{ display: 'flex', flexDirection: 'row', flex: 1, justifyContent: 'flex-end', marginHorizontal: '5%', marginVertical: '2%' }}>
         <Send {...props}>
-          <View style={{ alignSelf: 'center', justifyContent: 'center', alignItems: 'center' }}>
-            <Sendicon />
-          </View>
+          <Sendicon width={30} height={30} />
         </Send>
       </View>
     );
   };
-  const renderInputToolbar = (props:any) => {
+  const renderInputToolbar = (props: any) => {
     return (
       <InputToolbar
         {...props}
         containerStyle={{
-          flexDirection: 'row',
-          alignItems: 'center',
         }}
         renderActions={() => (
-          <View style={{ marginRight: 10 }}>
-            <Camra />
+          <View style={{ marginHorizontal: '5%', marginVertical: '2%' }}>
+            <Camra width={35} height={35} />
           </View>
         )}
       />
@@ -57,24 +53,26 @@ const Message = () => {
 
   const renderBubble = (props: any) => {
     return (
-      <Bubble
-        {...props}
-        wrapperStyle={{
-          right: {
-            backgroundColor: '#2e64e5',
-          },
-        }}
-        textStyle={{
-          right: {
-            color: '#fff',
-          },
-        }}
-      />
+      <View style={{}}>
+        <Bubble
+          {...props}
+          wrapperStyle={{
+            right: {
+              backgroundColor: '#2e64e5',
+            },
+          }}
+          textStyle={{
+            right: {
+              color: '#fff',
+            },
+          }}
+        />
+      </View>
     );
   };
 
   return (
-    <View style={{ flex: 1, borderWidth: 5, borderColor: 'black', padding: 10 }}>
+    <View style={{ flex: 1, padding: '2%' }}>
       <GiftedChat
         messages={messages}
         onSend={(messages) => onSend(messages)}
@@ -86,11 +84,11 @@ const Message = () => {
         renderSend={renderSend}
         scrollToBottom
         textInputProps={{
-          style: { color: 'black' },
+          style: { color: 'black', width: '68%' },
           placeholder: 'Mesaj',
         }}
-        renderInputToolbar={renderInputToolbar}
 
+        renderInputToolbar={renderInputToolbar}
       />
     </View>
   );
