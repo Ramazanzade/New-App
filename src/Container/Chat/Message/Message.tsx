@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
 import { Bubble, GiftedChat, InputToolbar, Send } from 'react-native-gifted-chat';
 import Sendicon from '../../../assets/imge/Chat-imge/Send Solid.svg'
-import Kamera from '../../../assets/imge/Chat-imge/Icon set.svg'
+import Camra from '../../../assets/imge/Chat-imge/Icon set.svg'
 const Message = () => {
   const [messages, setMessages] = useState<any>([]);
 
@@ -18,7 +18,6 @@ const Message = () => {
           avatar: 'https://placeimg.com/140/140/any',
         },
       },
-
     ]);
   }, []);
 
@@ -30,11 +29,29 @@ const Message = () => {
 
   const renderSend = (props: any) => {
     return (
-      <Send {...props}>
-        <View style={{ alignSelf: 'flex-end', justifyContent: 'flex-end', backgroundColor: 'red' }}>
-          <Sendicon />
-        </View>
-      </Send>
+      <View style={{ display: 'flex', flexDirection: 'row', flex: 1, justifyContent: 'space-between' }}>
+        <Send {...props}>
+          <View style={{ alignSelf: 'center', justifyContent: 'center', alignItems: 'center' }}>
+            <Sendicon />
+          </View>
+        </Send>
+      </View>
+    );
+  };
+  const renderInputToolbar = (props:any) => {
+    return (
+      <InputToolbar
+        {...props}
+        containerStyle={{
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}
+        renderActions={() => (
+          <View style={{ marginRight: 10 }}>
+            <Camra />
+          </View>
+        )}
+      />
     );
   };
 
@@ -56,12 +73,6 @@ const Message = () => {
     );
   };
 
-  const scrollToBottomComponent = () => {
-    return (
-      <Sendicon />
-    );
-  }
-
   return (
     <View style={{ flex: 1, borderWidth: 5, borderColor: 'black', padding: 10 }}>
       <GiftedChat
@@ -74,22 +85,16 @@ const Message = () => {
         alwaysShowSend
         renderSend={renderSend}
         scrollToBottom
-        scrollToBottomComponent={scrollToBottomComponent}
         textInputProps={{
-          style: { color: 'black', },
-
+          style: { color: 'black' },
+          placeholder: 'Mesaj',
         }}
-        renderInputToolbar={() => {
-          return <InputToolbar
-            containerStyle={{ borderWidth: 2, borderRadius: 5, padding: '2%' }}
-          />
-        }}
+        renderInputToolbar={renderInputToolbar}
 
       />
     </View>
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {
