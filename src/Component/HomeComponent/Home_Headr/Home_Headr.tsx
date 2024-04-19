@@ -23,7 +23,7 @@ const Home_Headr = ({ navigation }: any) => {
         <View style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
             <View style={{ display: 'flex', flexDirection: 'row', marginTop: '10%', justifyContent: 'space-around' }}>
                 <View style={{ alignSelf: 'center' }}>
-                    <TouchableOpacity style={{ width: 45, height: 45, backgroundColor: '#FDFBFF', borderRadius: 55, alignSelf: 'center', alignItems: "center", paddingTop: '19%' }}>
+                    <TouchableOpacity style={{ width: 45, height: 45, backgroundColor: '#FDFBFF', borderRadius: 55, alignSelf: 'center', alignItems: "center", paddingTop: '19%' }} onPress={()=>navigation.navigate('ProfileScreen')}>
                         <Menu width={25} height={25} />
                     </TouchableOpacity>
                 </View>

@@ -14,6 +14,7 @@ import Order_CancellationScreen from './src/Navigator/Stcak/Order_CancellationSt
 import { ButtonProvider } from './src/Context/ButtonContext/ButtonContext';
 import { StatusProvider } from './src/Context/StatusContext/StatusContext'
 import Chat_MessageScreen from './src/Navigator/Stcak/Chat_MessageStack/Chat_MessageScreen'
+import ProfileScreen from './src/Navigator/Stcak/ProfileStack/ProfileScreen'
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -28,9 +29,10 @@ const App = () => {
             {/* <Stack.Screen name="LoginScreen" component={LoginScreen} /> */}
             {/* <Stack.Screen name="RegisterScreen" component={RegisterScreen} /> */}
             {/* <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
-            {/* <Stack.Screen name="Tabbar" component={Tabbar} /> */}
+            <Stack.Screen name="Tabbar" component={Tabbar} />
             {/* <Stack.Screen name="Order_CancellationScreen" component={Order_CancellationScreen} /> */}
-            <Stack.Screen name="Chat_MessageScreen" component={Chat_MessageScreen} />
+            {/* <Stack.Screen name="Chat_MessageScreen" component={Chat_MessageScreen} /> */}
+            <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </ButtonProvider>

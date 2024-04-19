@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
+import { View, ScrollView, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { Bubble, GiftedChat, InputToolbar, Send } from 'react-native-gifted-chat';
 import Sendicon from '../../../assets/imge/Chat-imge/Send Solid.svg'
 import Camra from '../../../assets/imge/Chat-imge/Icon set.svg'
-const Message = () => {
+import Messagecomponent from './Messagecomponent';
+const Message = ({navigation}:any) => {
   const [messages, setMessages] = useState<any>([]);
 
   useEffect(() => {
@@ -43,9 +44,9 @@ const Message = () => {
         containerStyle={{
         }}
         renderActions={() => (
-          <View style={{ marginHorizontal: '5%', marginVertical: '2%' }}>
+          <TouchableOpacity style={{ marginHorizontal: '5%', marginVertical: '2%' }}>
             <Camra width={35} height={35} />
-          </View>
+          </TouchableOpacity>
         )}
       />
     );
@@ -72,34 +73,33 @@ const Message = () => {
   };
 
   return (
-    <View style={{ flex: 1, padding: '2%' }}>
-      <GiftedChat
-        messages={messages}
-        onSend={(messages) => onSend(messages)}
-        user={{
-          _id: 1,
-        }}
-        renderBubble={renderBubble}
-        alwaysShowSend
-        renderSend={renderSend}
-        scrollToBottom
-        textInputProps={{
-          style: { color: 'black', width: '68%' },
-          placeholder: 'Mesaj',
-        }}
+    <View style={{flex: 1,backgroundColor: '#FFFFFF',}}>
+      <View >
+        <Messagecomponent navigation={navigation}/>
+      </View>
+      <View style={{ flex: 1, padding: '2%', backgroundColor: '#FFFFFF', }}>
+        <GiftedChat
+          messages={messages}
+          onSend={(messages) => onSend(messages)}
+          user={{
+            _id: 1,
+          }}
+          renderBubble={renderBubble}
+          alwaysShowSend
+          renderSend={renderSend}
+          scrollToBottom
+          textInputProps={{
+            style: { color: 'black', width: '68%' },
+            placeholder: 'Mesaj',
+          }}
 
-        renderInputToolbar={renderInputToolbar}
-      />
+          renderInputToolbar={renderInputToolbar}
+      
+        />
+      </View>
     </View>
+
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default Message;
