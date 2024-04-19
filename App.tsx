@@ -32,7 +32,7 @@ const App = () => {
             <Stack.Screen name="Tabbar" component={Tabbar} />
             {/* <Stack.Screen name="Order_CancellationScreen" component={Order_CancellationScreen} /> */}
             {/* <Stack.Screen name="Chat_MessageScreen" component={Chat_MessageScreen} /> */}
-            <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+            {/* <Stack.Screen name="ProfileScreen" component={ProfileScreen} /> */}
           </Stack.Navigator>
         </NavigationContainer>
       </ButtonProvider>

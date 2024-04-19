@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Modal, TouchableOpacity } from 'react-native';
 import Offline from '../../../assets/imge/Home-imge/Vector 1.svg';
 import { Switch } from 'react-native-switch';
 import Online from '../../../assets/imge/Home-imge/Vecstor 1.svg'
@@ -10,22 +10,39 @@ import Online_index from '../Online/Online_index';
 import X from '../../../assets/imge/Home-imge/x.svg'
 import N from '../../../assets/imge/Home-imge/!.svg'
 import { ButtonContext } from '../../../Context/ButtonContext/ButtonContext'
+import Profile_Modal from '../../../Modal/Profile_Modal/Profile_Modal';
 const Home_Headr = ({ navigation }: any) => {
     const [switchValue, setSwitchValue] = useState(false);
     const { button, setButton } = useContext(ButtonContext);
     const toggleSwitch = (value: any) => {
         setSwitchValue(value);
     };
-    const Handles = () => {
-        setSwitchValue(false)
+    const [profilemodal, setprofilemodal] = useState(false)
+    const touc = () => {
+        setprofilemodal(!profilemodal)
     }
     return (
         <View style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
             <View style={{ display: 'flex', flexDirection: 'row', marginTop: '10%', justifyContent: 'space-around' }}>
                 <View style={{ alignSelf: 'center' }}>
-                    <TouchableOpacity style={{ width: 45, height: 45, backgroundColor: '#FDFBFF', borderRadius: 55, alignSelf: 'center', alignItems: "center", paddingTop: '19%' }} onPress={()=>navigation.navigate('ProfileScreen')}>
+                    <TouchableOpacity style={{ width: 45, height: 45, backgroundColor: '#FDFBFF', borderRadius: 55, alignSelf: 'center', alignItems: "center", paddingTop: '19%' }} onPress={() => setprofilemodal(true)}>
                         <Menu width={25} height={25} />
                     </TouchableOpacity>
+                    <Modal
+                        animationType='fade'
+                        transparent={true}
+                        visible={profilemodal}
+                    >
+                           <TouchableOpacity
+                            style={{ flex: 1 , zIndex:-3, position:'absolute'}}
+                            onPress={() => setprofilemodal(false)} 
+                        >
+                            <View style={{ flex: 1, backgroundColor: 'rgba(17, 17, 17, 0.3)',zIndex:-2 }} />
+                        </TouchableOpacity>
+                        <View style={{ flex: 1, backgroundColor: 'rgba(17, 17, 17, 0.3)', justifyContent: 'center' }} >
+                            <Profile_Modal />
+                        </View>
+                    </Modal>
                 </View>
                 <View>
                     <Switch
