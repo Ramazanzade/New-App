@@ -12,7 +12,7 @@ import { SCREEN_WIDTH } from '../../../Utils/common'
 const Body = ({ navigation }: any) => {
     return (
         <View style={{ width: SCREEN_WIDTH - 40, alignSelf: 'center', marginTop:'5%' }} >
-            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
+            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }} onPressIn={()=>navigation.navigate('Edit_Car')}>
                 <View style={{ display: 'flex', flexDirection: 'row' }}>
                     <Icon_1 width={40} height={40} />
                     <View style={{ marginHorizontal: '5%' }}>
@@ -25,7 +25,7 @@ const Body = ({ navigation }: any) => {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginVertical:'5%'}}>
+            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginVertical:'5%'}} onPressIn={()=>navigation.navigate('Edit_User')}>
                 <View style={{ display: 'flex', flexDirection: 'row' }}>
                     <Icon_2 width={40} height={40} />
                     <View style={{ marginHorizontal: '5%' }}>

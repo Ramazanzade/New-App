@@ -1,10 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import Headr from '../../../Component/EditProfilComponent/Edit_Cart_Component/Headr'
+import Body from '../../../Component/EditProfilComponent/Edit_Cart_Component/Body'
 
-const Edit_Car = () => {
+const Edit_Car = ({navigation}:any) => {
   return (
-    <View>
-      <Text>Edit_Car</Text>
+    <View style={{backgroundColor:'#FFFFFF', flex:1}}>
+        <Headr navigation={navigation}/>
+        <Body/>
     </View>
   )
 }
