@@ -33,16 +33,20 @@ const Home_Headr = ({ navigation }: any) => {
                         transparent={true}
                         visible={profilemodal}
                     >
-                           <TouchableOpacity
-                            style={{ flex: 1 , zIndex:-3, position:'absolute'}}
-                            onPress={() => setprofilemodal(false)} 
-                        >
-                            <View style={{ flex: 1, backgroundColor: 'rgba(17, 17, 17, 0.3)',zIndex:-2 }} />
-                        </TouchableOpacity>
-                        <View style={{ flex: 1, backgroundColor: 'rgba(17, 17, 17, 0.3)', justifyContent: 'center' }} >
-                            <Profile_Modal />
-                        </View>
+                        <TouchableOpacity
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                backgroundColor: 'rgba(0,0,0,0.5)',
+                            }}
+                            onPress={() => setprofilemodal(false)}
+                        />
+                        <Profile_Modal navigation={navigation} />
                     </Modal>
+
                 </View>
                 <View>
                     <Switch
