@@ -37,7 +37,7 @@ const Body = ({ navigation }: any) => {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
+            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }} onPressIn={()=>navigation.navigate('Driver_Portal')}>
                 <View style={{ display: 'flex', flexDirection: 'row' }}>
                     <Icon_3 width={40} height={40} />
                     <View style={{ marginHorizontal: '5%' }}>
