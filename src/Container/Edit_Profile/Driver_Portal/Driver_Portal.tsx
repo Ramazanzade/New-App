@@ -5,7 +5,7 @@ import Body from '../../../Component/EditProfilComponent/Driver_Portal_Component
 
 const Driver_Portal = ({navigation}:any) => {
     return (
-        <View style={{ backgroundColor: '#FFFFFFF', flex: 1 }}>
+        <View style={{ backgroundColor: '#FFFFFF', flex: 1 }}>
             <Headr navigation={navigation} />
             <Body navigation={navigation}/>
         </View>

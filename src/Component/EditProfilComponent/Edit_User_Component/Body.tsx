@@ -52,7 +52,7 @@ const Body = ({ navigation }: any) => {
                     onChangeText={setname}
                     value={name}
                     placeholder='Ad'
-                    style={{ borderWidth: 1, borderColor: 'rgba(17, 17, 19, 0.2)', borderRadius: 10, textAlign: 'left', paddingLeft: 15, fontSize: 13, padding: '4%' }}
+                    style={{ borderWidth: 1, borderColor: 'rgba(17, 17, 19, 0.2)', borderRadius: 10, textAlign: 'left', paddingLeft: 15, fontSize: 13, padding: '4%',  color: 'rgba(37, 38, 41, 1)'  }}
                     placeholderTextColor='rgba(17, 17, 19, 0.6)'
                 />
             </View>
@@ -62,7 +62,7 @@ const Body = ({ navigation }: any) => {
                     onChangeText={setsurname}
                     value={surname}
                     placeholder='Soyad'
-                    style={{ borderWidth: 1, borderColor: 'rgba(17, 17, 19, 0.2)', borderRadius: 10, textAlign: 'left', paddingLeft: 15, fontSize: 13, padding: '4%' }}
+                    style={{ borderWidth: 1, borderColor: 'rgba(17, 17, 19, 0.2)', borderRadius: 10, textAlign: 'left', paddingLeft: 15, fontSize: 13, padding: '4%',  color: 'rgba(37, 38, 41, 1)'  }}
                     placeholderTextColor='rgba(17, 17, 19, 0.6)'
                 />
             </View>
@@ -102,7 +102,7 @@ const Body = ({ navigation }: any) => {
                         onChangeText={setnumber}
                         value={number}
                         placeholder='(555) 000-0000'
-                        style={{ flex: 1, textAlign: 'left', fontSize: 13, padding: '4%' }}
+                        style={{ flex: 1, textAlign: 'left', fontSize: 13, padding: '4%' ,  color: 'rgba(37, 38, 41, 1)' }}
                         placeholderTextColor='rgba(17, 17, 19, 0.6)'
                         keyboardType='numeric'
                     />

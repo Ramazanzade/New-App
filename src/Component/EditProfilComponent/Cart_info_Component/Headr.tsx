@@ -8,13 +8,12 @@ const Headr = ({navigation}:any) => {
         <View>
             <View style={{ display: 'flex', flexDirection: 'row', width: SCREEN_WIDTH - 20, alignSelf: 'center', marginTop: '5%', justifyContent: 'space-between' }}>
                 <View>
-                    <TouchableOpacity style={{ alignSelf: 'center' }} onPress={()=>navigation.navigate('Tabbar',{screen:'HomeScreen'})}>
+                <TouchableOpacity style={{ alignSelf: 'center' }} onPressOut={()=>navigation.navigate('Edit_Home')}>
                         <Go width={50} height={50} />
                     </TouchableOpacity>
                 </View>
-                <View style={{}}>
-                    <Text style={{ color: 'rgba(16, 17, 20, 1)', fontSize: 20, textAlign: 'center' }}>Ad Soyad</Text>
-                    <Text style={{ color: 'rgba(144, 144, 148, 1)', textAlign: 'center' }}>+994515255555</Text>
+                <View style={{alignSelf:'center'}}>
+                    <Text style={{ color: 'rgba(16, 17, 20, 1)', fontSize: 20, textAlign: 'center' }}>Kart məlumatları</Text>
                 </View>
                 <View>
                     {/*  justifyContent: 'space-between' görə belə yazmışam  */}
@@ -26,5 +25,4 @@ const Headr = ({navigation}:any) => {
         </View>
     )
 }
-
 export default Headr

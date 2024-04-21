@@ -29,7 +29,7 @@ const App = () => {
             {/* <Stack.Screen name="LoginScreen" component={LoginScreen} /> */}
             {/* <Stack.Screen name="RegisterScreen" component={RegisterScreen} /> */}
             {/* <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
-            <Stack.Screen name="Tabbar" component={Tabbar} />
+            {/* <Stack.Screen name="Tabbar" component={Tabbar} /> */}
             {/* <Stack.Screen name="Order_CancellationScreen" component={Order_CancellationScreen} /> */}
             {/* <Stack.Screen name="Chat_MessageScreen" component={Chat_MessageScreen} /> */}
             <Stack.Screen name="EditProfleScreen" component={EditProfleScreen} />            

@@ -49,7 +49,7 @@ const Body = ({ navigation }: any) => {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginVertical:'5%'}}>
+            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginVertical:'5%'}} onPressIn={()=>navigation.navigate('Cart_Info')}>
                 <View style={{ display: 'flex', flexDirection: 'row' }}>
                     <Icon_4 width={40} height={40} />
                     <View style={{ marginHorizontal: '5%' }}>

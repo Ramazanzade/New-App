@@ -6,6 +6,8 @@ import Edit_Car from '../../../Container/Edit_Profile/Edit_Car/Edit_Car';
 import Edit_User from '../../../Container/Edit_Profile/Edit_User/Edit_User';
 import Driver_Portal from '../../../Container/Edit_Profile/Driver_Portal/Driver_Portal';
 import Select_Product from '../../../Container/Edit_Profile/Select_Product/Select_Product';
+import Cart_Info from '../../../Container/Edit_Profile/Cart_info/Cart_Info';
+import Add_NewCart from '../../../Container/Edit_Profile/Add_NewCart/Add_NewCart';
 const Stack = createNativeStackNavigator();
 const EditProfleScreen = () => {
     return (
@@ -14,7 +16,9 @@ const EditProfleScreen = () => {
             <Stack.Screen name="Edit_Car" component={Edit_Car} />
             <Stack.Screen name="Edit_User" component={Edit_User} />
             <Stack.Screen name="Driver_Portal" component={Driver_Portal} />
+            <Stack.Screen name="Cart_Info" component={Cart_Info} />
             <Stack.Screen name="Select_Product" component={Select_Product} />
+            <Stack.Screen name="Add_NewCart" component={Add_NewCart} />
         </Stack.Navigator>
     )
 }
