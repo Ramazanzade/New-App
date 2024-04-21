@@ -21,7 +21,7 @@ const Body = ({ navigation }: any) => {
             <View style={{ alignSelf: 'center' }}>
                 <Cartsvg width={400} height={250} />
             </View>
-            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row' }}>
+            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row' }} onPressIn={()=>navigation.navigate('Scan_NewCart')}>
                 <View style={{ alignSelf: 'center', marginRight: '3%' }}>
                     <Scann />
                 </View>
@@ -57,7 +57,7 @@ const Body = ({ navigation }: any) => {
                             onChangeText={setbirth}
                             value={birth}
                             placeholder='DD/MM/YYYY'
-                            style={{ borderWidth: 1, borderColor: 'rgba(17, 17, 19, 0.2)', borderRadius: 10, textAlign: 'left', paddingLeft: 15, fontSize: 13, padding: '4%', color: 'rgba(37, 38, 41, 1)', paddingHorizontal:'20%' }}
+                            style={{ borderWidth: 1, borderColor: 'rgba(17, 17, 19, 0.2)', borderRadius: 10, textAlign: 'left', paddingLeft: 15, fontSize: 13, padding: '4%', color: 'rgba(37, 38, 41, 1)', paddingHorizontal:80 }}
                             placeholderTextColor='rgba(17, 17, 19, 0.6)'
                             keyboardType='numeric'
                         />
@@ -84,7 +84,7 @@ const Body = ({ navigation }: any) => {
                             onChangeText={setcvv}
                             value={cvv}
                             placeholder='Cvv'
-                            style={{ borderWidth: 1, borderColor: 'rgba(17, 17, 19, 0.2)', borderRadius: 10, textAlign: 'left', paddingLeft: 15, fontSize: 13, padding: '4%', color: 'rgba(37, 38, 41, 1)' , paddingHorizontal:'30%'}}
+                            style={{ borderWidth: 1, borderColor: 'rgba(17, 17, 19, 0.2)', borderRadius: 10, textAlign: 'left', paddingLeft: 15, fontSize: 13, padding: '4%', color: 'rgba(37, 38, 41, 1)' , paddingHorizontal:100}}
                             placeholderTextColor='rgba(17, 17, 19, 0.6)'
                             keyboardType='numeric'
                         />
