@@ -17,7 +17,7 @@ const Body = ({navigation}:any) => {
                 <One width={25} height={25} />
                 <Text style={{color:'rgba(16, 17, 20, 1)', fontSize:15, marginLeft:'4%', textAlign:'center'}}>Parametrlər</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={{display:'flex', flexDirection:'row', }}>
+            <TouchableOpacity style={{display:'flex', flexDirection:'row',  }} onPress={()=>navigation.navigate('Other_edit_Screen',{screen:'Invite_Friend'})}>
                 <Four width={25} height={25} />
                 <Text style={{color:'rgba(16, 17, 20, 1)', fontSize:15, marginLeft:'4%', textAlign:'center'}}>Dostu dəvət et</Text>
             </TouchableOpacity>
