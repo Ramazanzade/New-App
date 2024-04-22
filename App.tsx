@@ -15,6 +15,7 @@ import { ButtonProvider } from './src/Context/ButtonContext/ButtonContext';
 import { StatusProvider } from './src/Context/StatusContext/StatusContext'
 import Chat_MessageScreen from './src/Navigator/Stcak/Chat_MessageStack/Chat_MessageScreen'
 import EditProfleScreen from './src/Navigator/Stcak/EditProfileStack/EditProfleScreen'
+import Other_edit_Screen from './src/Navigator/Stcak/Other_edit_Stack/Other_edit_Screen'
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -32,7 +33,8 @@ const App = () => {
             {/* <Stack.Screen name="Tabbar" component={Tabbar} /> */}
             {/* <Stack.Screen name="Order_CancellationScreen" component={Order_CancellationScreen} /> */}
             {/* <Stack.Screen name="Chat_MessageScreen" component={Chat_MessageScreen} /> */}
-            <Stack.Screen name="EditProfleScreen" component={EditProfleScreen} />            
+            <Stack.Screen name="EditProfleScreen" component={EditProfleScreen} />   
+            <Stack.Screen name="Other_edit_Screen" component={Other_edit_Screen} />                     
           </Stack.Navigator>
         </NavigationContainer>
       </ButtonProvider>
