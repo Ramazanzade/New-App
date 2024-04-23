@@ -1,10 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import Headr from '../../../Component/Other_edit_Page_Component/F.A.Q/Headr'
+import Body from '../../../Component/Other_edit_Page_Component/F.A.Q/Body'
 
-const F_A_Q = () => {
+const F_A_Q = ({navigation}:any) => {
   return (
-    <View>
-      <Text>F.A.Q</Text>
+    <View style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
+      <Headr navigation={navigation} />
+      <Body navigation={navigation} />
     </View>
   )
 }

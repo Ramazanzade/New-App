@@ -21,7 +21,7 @@ const Body = ({navigation}:any) => {
                 <Four width={25} height={25} />
                 <Text style={{color:'rgba(16, 17, 20, 1)', fontSize:15, marginLeft:'4%', textAlign:'center'}}>Dostu dəvət et</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={{display:'flex', flexDirection:'row', marginVertical:'8%'}}>
+            <TouchableOpacity style={{display:'flex', flexDirection:'row', marginVertical:'8%'}}  onPress={()=>navigation.navigate('Other_edit_Screen',{screen:'F_A_Q'})}>
                 <Tow width={25} height={25} />
                 <Text style={{color:'rgba(16, 17, 20, 1)', fontSize:15, marginLeft:'4%', textAlign:'center'}}>F.A.Q</Text>
             </TouchableOpacity>

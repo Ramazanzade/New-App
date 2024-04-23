@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity,Modal } from 'react-native'
+import { View, Text, TouchableOpacity,Modal, Alert} from 'react-native'
 import React, { useState } from 'react'
 import Imges from '../../../assets/imge/Other_edit_Page-imge/Contact us-amico 1.svg'
 import { SCREEN_WIDTH } from '../../../Utils/common'
@@ -9,6 +9,7 @@ const Body = ({ navigation }: any) => {
     const handlePress = async () => {
         const textToCopy = 'AJKATSA743';
         await Clipboard.setString(textToCopy);
+        Alert.alert('Panoya kopyalandı', textToCopy)
         // kopyalayır , Sadəcə ekrana vermək lazımdı istənilsə
     };
     const [modali, setmodali] = useState(false)
