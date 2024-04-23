@@ -25,7 +25,7 @@ const Body = ({navigation}:any) => {
                 <Tow width={25} height={25} />
                 <Text style={{color:'rgba(16, 17, 20, 1)', fontSize:15, marginLeft:'4%', textAlign:'center'}}>F.A.Q</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={{display:'flex', flexDirection:'row', }}>
+            <TouchableOpacity style={{display:'flex', flexDirection:'row', }} onPress={()=>navigation.navigate('EditProfleScreen')}>
                 <Five width={25} height={25} />
                 <Text style={{color:'rgba(16, 17, 20, 1)', fontSize:15, marginLeft:'4%', textAlign:'center'}}>Haqqında</Text>
             </TouchableOpacity>

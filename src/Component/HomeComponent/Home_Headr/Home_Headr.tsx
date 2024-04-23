@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { View, Modal, TouchableOpacity } from 'react-native';
 import Offline from '../../../assets/imge/Home-imge/Vector 1.svg';
 import { Switch } from 'react-native-switch';
@@ -18,14 +18,28 @@ const Home_Headr = ({ navigation }: any) => {
         setSwitchValue(value);
     };
     const [profilemodal, setprofilemodal] = useState(false)
-    const touc = () => {
-        setprofilemodal(!profilemodal)
+    const Touc = () => {
+        setprofilemodal(true)
+        console.log('salam');
+
     }
+    const [rerender, setRerender] = useState(false);
+    // hər dəfə renderləmək məqsədi ilə bu kod bloqu yazıdı
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            setRerender(prevState => !prevState);
+        });
+        return unsubscribe;
+    }, [navigation]);
+    useEffect(() => {
+        setprofilemodal(false);
+    }, [rerender]);
+
     return (
         <View style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
             <View style={{ display: 'flex', flexDirection: 'row', marginTop: '10%', justifyContent: 'space-around' }}>
                 <View style={{ alignSelf: 'center' }}>
-                    <TouchableOpacity style={{ width: 45, height: 45, backgroundColor: '#FDFBFF', borderRadius: 55, alignSelf: 'center', alignItems: "center", paddingTop: '19%' }} onPress={() => setprofilemodal(true)}>
+                    <TouchableOpacity style={{ width: 45, height: 45, backgroundColor: '#FDFBFF', borderRadius: 55, alignSelf: 'center', alignItems: "center", paddingTop: '19%' }} onPress={Touc}>
                         <Menu width={25} height={25} />
                     </TouchableOpacity>
                     <Modal
@@ -46,7 +60,6 @@ const Home_Headr = ({ navigation }: any) => {
                         />
                         <Profile_Modal navigation={navigation} />
                     </Modal>
-
                 </View>
                 <View>
                     <Switch

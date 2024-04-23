@@ -31,7 +31,6 @@ const Body = ({navigation}:any) => {
     }
     return (
         <View style={{ marginTop:'5%'}}>
-
             <FlatList
                 data={data}
                 renderItem={(item) => renderItem(item)}
