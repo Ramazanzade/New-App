@@ -22,7 +22,7 @@ const Scheduled_data_Modal = ({ close }: any) => {
                             </View>
                         </View>
                         <View >
-                            <Text style={{ color: 'rgba(118, 119, 122, 1)', width: SCREEN_WIDTH - 80, alignSelf: 'center', fontSize: 11 }}>16.20 - 18.20</Text>
+                            <Text style={{ color: 'rgba(118, 119, 122, 1)', width: SCREEN_WIDTH - 80, alignSelf: 'center'   , fontSize: 11 }}>16.20 - 18.20</Text>
                         </View>
                     </View>
                 </View>

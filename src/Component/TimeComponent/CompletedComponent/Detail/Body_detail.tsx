@@ -77,8 +77,8 @@ const Body_detail = () => {
     }
     return (
         <View>
-            <View style={{width: SCREEN_WIDTH - 20, alignSelf: 'center'}}>
-                <Text style={{ color: 'rgba(16, 17, 20, 1)' , fontSize:20, fontWeight:'600', marginVertical:'5%'}}>3 may </Text>
+            <View style={{ width: SCREEN_WIDTH - 20, alignSelf: 'center' }}>
+                <Text style={{ color: 'rgba(16, 17, 20, 1)', fontSize: 20, fontWeight: '600', marginVertical: '5%' }}>3 may </Text>
             </View>
             <FlatList
                 data={data}
