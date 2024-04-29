@@ -12,7 +12,7 @@ import Scan_NewCart from '../../../Container/Edit_Profile/Scan_NewCart/Scan_NewC
 const Stack = createNativeStackNavigator();
 const EditProfleScreen = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Navigator screenOptions={{ headerShown: false ,animation: 'slide_from_right' }} >
             <Stack.Screen name="Edit_Home" component={Edit_Home} />
             <Stack.Screen name="Edit_Car" component={Edit_Car} />
             <Stack.Screen name="Edit_User" component={Edit_User} />

@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 const ApplyScreen = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Navigator screenOptions={{ headerShown: false ,animation: 'slide_from_right'}} >
             <Stack.Screen name="Apply" component={Apply} />
         </Stack.Navigator>
     )

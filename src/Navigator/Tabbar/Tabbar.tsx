@@ -27,6 +27,7 @@ const Tabbar = ({navigation}:any) => {
           shadowOffset: {
             width: 0,
             height: 30,
+            
           },
         },
         tabBarIcon: ({ color, size, focused }: any) => {
@@ -48,7 +49,7 @@ const Tabbar = ({navigation}:any) => {
         
       })}
     >
-      <Tab.Screen name="HomeScreen" component={HomeScreen} />
+      <Tab.Screen name="HomeScreen" component={HomeScreen}  />
       <Tab.Screen name="TimeScreen" component={TimeScreen} />
       <Tab.Screen name="NotificationScreen" component={NotificationScreen} />
       <Tab.Screen name="ChatScreen" component={ChatScreen} />

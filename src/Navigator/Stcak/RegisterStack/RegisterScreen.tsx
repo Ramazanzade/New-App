@@ -7,7 +7,7 @@ import Driverslicense from '../../../Container/Register/Driverslicense/Driversli
 const Stack = createNativeStackNavigator();
 const RegisterScreen = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Navigator screenOptions={{ headerShown: false ,animation: 'slide_from_right'}} >
             <Stack.Screen name="Personalinformation" component={Personalinformation} />
             <Stack.Screen name="Driverinformation" component={Driverinformation} />
             <Stack.Screen name="Driverslicense" component={Driverslicense} />

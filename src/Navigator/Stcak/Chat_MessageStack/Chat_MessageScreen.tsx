@@ -5,7 +5,7 @@ import Message from '../../../Container/Chat/Message/Message';
 const Stack = createNativeStackNavigator();
 const Chat_MessageScreen = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Navigator screenOptions={{ headerShown: false ,animation: 'slide_from_right' }} >
             <Stack.Screen name="Message" component={Message} />
         </Stack.Navigator>
     )

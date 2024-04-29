@@ -5,7 +5,7 @@ import Order_Cancellation from '../../../Container/Order_Cancellation/Order_Canc
 const Stack = createNativeStackNavigator();
 const Order_CancellationScreen = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Navigator screenOptions={{ headerShown: false ,animation: 'slide_from_right'}} >
             <Stack.Screen name="Order_Cancellation" component={Order_Cancellation} />
         </Stack.Navigator>
   )

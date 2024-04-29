@@ -5,7 +5,7 @@ import Notification from '../../../Container/Notification/Notification';
 const Stack = createNativeStackNavigator();
 const NotificationScreen = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Navigator screenOptions={{ headerShown: false ,animation: 'slide_from_right'}} >
             <Stack.Screen name="Notification" component={Notification} />
         </Stack.Navigator>
     )

@@ -6,7 +6,7 @@ import Ready_answer from '../../../Container/Chat/Ready_answer';
 const Stack = createNativeStackNavigator();
 const ChatScreen = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Navigator screenOptions={{ headerShown: false ,animation: 'slide_from_right' }} >
             <Stack.Screen name="Chat" component={Chat} />
             <Stack.Screen name="Ready_answer" component={Ready_answer} />
         </Stack.Navigator>

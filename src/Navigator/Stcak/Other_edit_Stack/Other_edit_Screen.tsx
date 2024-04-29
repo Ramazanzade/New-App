@@ -10,7 +10,7 @@ import Parameters from '../../../Container/Other_edit_Page/Parameters/Parameters
 const Stack = createNativeStackNavigator();
 const Other_edit_Screen = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Navigator screenOptions={{ headerShown: false ,animation: 'slide_from_right' }} >
             <Stack.Screen name="Delivery_Home" component={Delivery_Home} />
             <Stack.Screen name="Delivery_area" component={Delivery_area} />
             <Stack.Screen name="Delivery_hours" component={Delivery_hours} />

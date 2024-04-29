@@ -6,7 +6,7 @@ import Welcome_Next from '../../../Container/Welcomepage/Welcome_Next/Welcome_Ne
 const Stack = createNativeStackNavigator();
 const WelcomeScreen = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Navigator screenOptions={{ headerShown: false ,animation: 'slide_from_right' }} >
             <Stack.Screen name="Welcome_user" component={Welcome_user} />
             <Stack.Screen name="Welcome_Next" component={Welcome_Next} />
         </Stack.Navigator>

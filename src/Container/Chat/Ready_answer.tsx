@@ -11,12 +11,12 @@ const Ready_answer = ({ route, navigation }: any) => {
             <Text style={{ color: 'rgba(16, 17, 20, 1)', width: SCREEN_WIDTH - 40, alignSelf: 'center', marginTop: '3%', fontSize: 17 }}>Dəstək</Text>
             <View style={{ width: SCREEN_WIDTH, height: 1, backgroundColor: 'rgba(70, 70, 70, 1)', marginTop: '2%' }}></View>
             <View>
-                <View style={{display:'flex', flexDirection:'row', width:SCREEN_WIDTH-40, alignSelf:'center', marginVertical:'5%'}}>
+                <View style={{display:'flex', flexDirection:'row', width:SCREEN_WIDTH, alignSelf:'center', marginVertical:'5%'}}>
                     <TouchableOpacity onPress={()=>navigation.navigate('Chat')}>
-                        <Icongoback width={55} height={55} />
+                        <Icongoback width={45} height={45} />
                     </TouchableOpacity>
                     <View style={{alignSelf:'center'}}>
-                    <Text style={{ color: 'rgba(16, 17, 20, 1)', fontSize:20, fontWeight:'400', alignSelf:'center'}}>{data.text}</Text>
+                    <Text style={{ color: 'rgba(16, 17, 20, 1)', fontSize:15, fontWeight:'400', alignSelf:'center', width:'100%'}}>{data.text}</Text>
                     </View>
                 </View>
                 <View style={{width:SCREEN_WIDTH-40, alignSelf:'center'}}>
