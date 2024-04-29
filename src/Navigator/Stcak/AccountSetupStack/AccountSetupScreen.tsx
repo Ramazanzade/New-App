@@ -5,7 +5,7 @@ import AccountSetup from '../../../Container/Account-Setup/AccountSetup';
 const Stack = createNativeStackNavigator();
 const AccountSetupScreen = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Navigator screenOptions={{ headerShown: false , animation: 'slide_from_right'}} >
             <Stack.Screen name="AccountSetup" component={AccountSetup} />
         </Stack.Navigator>
     )
