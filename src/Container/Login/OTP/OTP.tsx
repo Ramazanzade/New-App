@@ -6,7 +6,7 @@ import Button from '../../../Component/LoginComponents/OTP/Button'
 const OTP = ({navigation}:any) => {
   return (
     <View style={{ backgroundColor: '#FFFFFF', flex: 1, display: 'flex', justifyContent: 'space-between' }}>
-    <View style={{marginTop:'10%'}}>
+    <View style={{marginTop:'50%'}}>
         <Body />
     </View>
     <View style={{ marginBottom: '10%' }}>

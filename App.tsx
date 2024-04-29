@@ -25,16 +25,16 @@ const App = () => {
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             {/* <Stack.Screen name="SplaScreen" component={SplasScreen} />  */}
             {/* <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} /> */}
-            <Stack.Screen name="AccountSetupScreen" component={AccountSetupScreen} />
-            <Stack.Screen name="ApplyScreen" component={ApplyScreen} />
+            {/* <Stack.Screen name="AccountSetupScreen" component={AccountSetupScreen} />
+            <Stack.Screen name="ApplyScreen" component={ApplyScreen} /> */}
             <Stack.Screen name="LoginScreen" component={LoginScreen} />
-            <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+            {/* <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
             <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
             <Stack.Screen name="Tabbar" component={Tabbar} />
             <Stack.Screen name="Order_CancellationScreen" component={Order_CancellationScreen} />
             <Stack.Screen name="Chat_MessageScreen" component={Chat_MessageScreen} />
             <Stack.Screen name="EditProfleScreen" component={EditProfleScreen} />   
-            <Stack.Screen name="Other_edit_Screen" component={Other_edit_Screen} />                     
+            <Stack.Screen name="Other_edit_Screen" component={Other_edit_Screen} />                      */}
           </Stack.Navigator>  
         </NavigationContainer>
       </ButtonProvider>
