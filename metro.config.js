@@ -18,5 +18,6 @@ const config = {
     sourceExts: [...sourceExts, "svg"]
   }
 };
+// Svg məqsədi ilə bu mutləq confiq edilməldir
 
 module.exports = mergeConfig(defaultConfig, config);
