@@ -1,11 +1,11 @@
 import { Dimensions, Platform } from 'react-native'
-const isIOS = () => {
-  return Platform.OS === 'ios'
-}
+// const isIOS = () => {
+//   return Platform.OS === 'ios'
+// }
 
-const isAndroid = () => {
-  return Platform.OS === 'android'
-}
+// const isAndroid = () => {
+//   return Platform.OS === 'android'
+// }
 
 const formatNumber = (x: number) => {
   return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -17,4 +17,4 @@ const randomColor = () => {
   return '#' + Math.floor(Math.random() * 16777215).toString(16)
 }
 
-export { isIOS, isAndroid, SCREEN_WIDTH, SCREEN_HEIGHT, formatNumber, randomColor }
+export {  SCREEN_WIDTH, SCREEN_HEIGHT, formatNumber, randomColor }
