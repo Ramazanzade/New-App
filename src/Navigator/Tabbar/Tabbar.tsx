@@ -51,8 +51,8 @@ const Tabbar = ({navigation}:any) => {
     >
       <Tab.Screen name="HomeScreen" component={HomeScreen}  />
       <Tab.Screen name="TimeScreen" component={TimeScreen} />
-      <Tab.Screen name="NotificationScreen" component={NotificationScreen} />
-      <Tab.Screen name="ChatScreen" component={ChatScreen} />
+      {/* <Tab.Screen name="NotificationScreen" component={NotificationScreen} />
+      <Tab.Screen name="ChatScreen" component={ChatScreen} /> */}
     </Tab.Navigator>
   );
 }
