@@ -43,7 +43,7 @@ const Tabbar = ({navigation}:any) => {
             IconComponent = focused ? C1 : ChatScreen1  ;
           }
 
-          return <IconComponent color={focused ? "green" : "red"} size={35} />;
+        //   return <IconComponent color={focused ? "green" : "red"} size={35} />;
         },
         tabBarShowLabel: false,      
         
