@@ -1,9 +1,20 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { View, Text, TouchableOpacity , Animated} from 'react-native'
+import React, { useState } from 'react'
 import { SCREEN_WIDTH } from '../../../Utils/common'
 
 const Button = ({navigation}:any) => {
     // Bura limit qoy 
+//   const fadeAnim = useState(new Animated.Value(1))[0];
+//   const fadeOut = () => {
+//         Animated.timing(fadeAnim, {
+//           toValue: 0, 
+//           duration: 500, 
+//           useNativeDriver: true,
+//         }).start(() => {
+//           navigation.navigate('Tabbar', { screen: 'HomeScreen' });
+//         });
+//       };
+    
     return (
         <View style={{ width: SCREEN_WIDTH - 40, alignSelf: 'center' }}>
             <TouchableOpacity style={{ backgroundColor: 'rgba(0, 80, 155, 1)', borderRadius: 10 }} onPress={() => navigation.navigate('Tabbar',{screen:'HomeScreen'})}>
